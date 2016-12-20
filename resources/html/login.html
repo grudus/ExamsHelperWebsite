@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles/login.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="../js/login.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<div ng-app="ExamsHelperApp-login">
+
+
+    <div class="sign_in">
+        <h3 ng-controller="appName">{{appName}}</h3>
+
+        <div class="sign_in-form">
+            <input type="text" placeholder="login" id="username"/>
+            <input type="password" placeholder="password" id="password" />
+
+            <div class="buttons">
+                <div class="button" id="submit">Sign in</div>
+                <div class="button" id="create-account">Sign up</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
