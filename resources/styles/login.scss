@@ -40,16 +40,22 @@ body {
       padding: 8px;
       margin: 8px;
       color: beige;
+
+
+      &.error {
+        border: red 1px solid;
+      }
     }
 
   }
-
 }
 
 .buttons {
   margin: 24px;
+  display: inline-block;
 }
 
 .button {
   margin: 16px;
+  cursor: pointer;
 }
