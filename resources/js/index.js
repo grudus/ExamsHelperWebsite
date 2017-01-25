@@ -1,20 +1,18 @@
-function init() {
-    const app = angular.module("ExamsHelperApp", []);
+angular.module("ExamsHelperApp", ['ngRoute'])
+    .config(['$routeProvider', '$locationProvider',
+        function ($routeProvider) {
+            $routeProvider
 
-    app.controller("appName", function ($scope) {
-        $scope.appName = "ExamsHelper"
+                .when('/', {
+                    template: '<div>This should be visible:{{ ctrl.one }}</div><div>This should not:{{ one }}</div>',
+                    controller: 'Ctrl',
+                    controllerAs: 'ctrl'
+                });
+        }])
+    .controller('Ctrl', function ($scope) {
+        var ctrl = this;
+        ctrl.one = 'actual';
     });
 
-}
-
-init();
 
 
-
-function User() {
-    this.token = null;
-
-    this.setToken = function (token) {
-        this.setToken = token;
-    }
-}
