@@ -2,3 +2,4 @@
 *.iml
 resources/styles/*.css*
 .sass*
+app/node_modules
