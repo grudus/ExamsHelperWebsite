@@ -1,7 +1,5 @@
 angular.module('ExamsHelper')
-    .controller('appName', function ($scope, $http, BASE_URL) {
-        $scope.appName = 'Ładnie się załadowało';
-
+    .controller('UserController', function ($scope, $http, BASE_URL) {
         $http({
             url: BASE_URL + '/api/user',
             method: 'GET'

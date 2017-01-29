@@ -2,6 +2,7 @@ class User {
     constructor(json) {
         this.email = json.email;
         this.username = json.username;
+        this.registerDate = new Date(json.registerDate).toLocaleDateString("pl");
     }
 }
 
@@ -31,8 +32,12 @@ angular.module('ExamsHelper', ['ngRoute'])
     }])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when('index.html', {redirectTo: '/'})
-            .when('/', {templateUrl: 'html/user.html'});
+        // .when('index.html', {redirectTo: '/'})
+            .when('/', {templateUrl: 'html/user.html'})
+            .when('/profile', {templateUrl: 'html/user.html'})
+            .when('/exams', {templateUrl: 'html/exams.html'})
+            .when('/subjects', {templateUrl: 'html/subjects.html'})
+            .when('/stats', {templateUrl: 'html/stats.html'});
 
     }])
     .controller('Ctrl', function ($scope, BASE_URL, TokenService) {

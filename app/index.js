@@ -11,6 +11,7 @@ app.get('/login', function (req, res) {
 
 app.all('*', function (req, res) {
     res.redirect('http://localhost:3000');
+    // res.sendFile('src/index.html', {root: __dirname})
 });
 
 app.listen(3000, function () {

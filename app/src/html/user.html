@@ -1,13 +1,9 @@
-<link rel="stylesheet" type="text/css" href="/styles/index.css"/>
-
-<body>
 <div>
-    <div class="top" ng-controller="appName">
-        <h3>{{appName}}</h3>
+    <div class="card" ng-controller="UserController">
 
-        <p>Hello, {{user.username}}</p>
+        <p class="title">{{user.username}}</p>
         <p>{{user.email}}</p>
+        <p>{{user.registerDate}}</p>
     </div>
 </div>
-</body>
 

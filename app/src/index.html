@@ -2,17 +2,31 @@
 <html lang="en" ng-app="ExamsHelper">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ExamsHelper</title>
     <link rel="stylesheet" type="text/css" href="./styles/index.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
 </head>
 <body>
 
+<div id="toolbar" class="toolbar">
+    <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#exams">Exams</a></li>
+        <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#stats">Stats</a></li>
+        
+    </ul>
+</div>
+
+
 <div ng-controller="Ctrl">
     <h2>{{title}}</h2>
 
-<div ng-view></div>
-
+    <div class="content">
+        <div ng-view></div>
+    </div>
 </div>
 </body>
 
