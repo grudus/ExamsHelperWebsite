@@ -5,12 +5,12 @@ var app = express();
 app.use(express.static(__dirname + '/src'));
 app.use('/scripts', express.static(__dirname + '/node_modules'));
 
-app.get('/', function (req, res) {
-    res.sendFile('src/index.html', {root: __dirname});
-});
-
 app.get('/login', function (req, res) {
     res.sendFile('src/login.html', {root: __dirname})
+});
+
+app.all('*', function (req, res) {
+    res.redirect('http://localhost:3000');
 });
 
 app.listen(3000, function () {

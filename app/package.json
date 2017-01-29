@@ -3,11 +3,6 @@
   "version": "0.0.1",
   "description": "Website for ExamsHelper app",
   "main": "index.js",
-  "dependencies": {
-    "angular": "1.5.8",
-    "angular-cookies": "1.5.8"
-  },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node index"
@@ -21,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/grudus/ExamsHelperWebsite/issues"
   },
-  "homepage": "https://github.com/grudus/ExamsHelperWebsite#readme"
+  "homepage": "https://github.com/grudus/ExamsHelperWebsite#readme",
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-route": "1.6.1"
+  }
 }

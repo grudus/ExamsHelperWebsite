@@ -4,7 +4,8 @@ class User {
         this.username = json.username;
     }
 }
-angular.module('ExamsHelper', [])
+
+angular.module('ExamsHelper', ['ngRoute'])
     .constant('BASE_URL', 'http://localhost:8080')
     .factory('TokenService', function () {
         return {
@@ -28,17 +29,15 @@ angular.module('ExamsHelper', [])
     .config(['$httpProvider', function ($httpProvider) {
         $httpProvider.interceptors.push('httpRequestInterceptor');
     }])
-    .controller('Ctrl', function ($scope, $http, BASE_URL, TokenService) {
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+            .when('index.html', {redirectTo: '/'})
+            .when('/', {templateUrl: 'html/user.html'});
+
+    }])
+    .controller('Ctrl', function ($scope, BASE_URL, TokenService) {
         if (TokenService.getToken() == null)
             window.location = '/login';
-
-        $http({
-            url: BASE_URL + '/api/user',
-            method: 'GET'
-        }).success(function (data) {
-            $scope.user = new User(JSON.parse(JSON.stringify(data)));
-        })
-
     });
 
 

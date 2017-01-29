@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="./styles/index.css"/>
-    <script src="/scripts/angular/angular.js" ></script>
-
-
-    <script src="./index.js"></script>
 
 </head>
-<body ng-controller="Ctrl">
+<body>
 
-<h2>{{title}}</h2>
+<div ng-controller="Ctrl">
+    <h2>{{title}}</h2>
 
-<p>Hello, {{user.username}}</p>
-<p>{{user.email}}</p>
+<div ng-view></div>
 
-<div ui-view></div>
-
+</div>
 </body>
+
+
+<script src="/scripts/angular/angular.js"></script>
+<script src="/scripts/angular-route/angular-route.js"></script>
+
+<script src="./index.js"></script>
+<script src="/js/user.js"></script>
 
 </html>
