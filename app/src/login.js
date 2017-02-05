@@ -3,6 +3,7 @@ angular.module('ExamsHelperApp', ['ExamsHelper'])
         $scope.appName = 'ExamsHelper';
     })
     .controller('singInForm', function ($scope, $http, TokenService, BASE_URL) {
+        TokenService.clear();
         $scope.tryToSignIn = function () {
             if ($scope.username == '' || $scope.password == '') {
                 alert('Cannot login');

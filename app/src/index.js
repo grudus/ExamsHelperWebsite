@@ -16,6 +16,10 @@ angular.module('ExamsHelper', ['ngRoute'])
 
             getToken: function () {
                 return localStorage.getItem('token');
+            },
+
+            clear: function () {
+                localStorage.clear();
             }
         }
     })
@@ -40,7 +44,7 @@ angular.module('ExamsHelper', ['ngRoute'])
             .when('/stats', {templateUrl: 'html/stats.html'});
 
     }])
-    .controller('Ctrl', function ($scope, BASE_URL, TokenService) {
+    .controller('MainController', function ($scope, BASE_URL, TokenService) {
         if (TokenService.getToken() == null)
             window.location = '/login';
     });

@@ -1,5 +1,7 @@
 .idea/
 *.iml
-resources/styles/*.css*
+app/src/styles/*.css*
 .sass*
 app/node_modules
+node_modules/
+npm-debug.log

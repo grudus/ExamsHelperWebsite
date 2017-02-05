@@ -1,3 +1,12 @@
-<div ng-controller="ExamsController">
-    <p class="no-items">No subjects</p>
+<div ng-controller="SubjectsController">
+    <p class="no-items" ng-show="!subjects.length">No subjects</p>
+
+    <ul ng-show="subjects.length" class="two-columns">
+        <li ng-repeat="subject in subjects">
+            <div class="dark subject-card card-border" ng-style="{'background': subject.color}">
+                <p>{{subject.label}}</p>
+            </div>
+        </li>
+    </ul>
+
 </div>
