@@ -2,6 +2,7 @@
 <html lang="en" ng-app="ExamsHelper" ng-cloak>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ExamsHelper</title>
     <link rel="stylesheet" type="text/css" href="./styles/index.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
@@ -10,22 +11,24 @@
 </head>
 <body>
 
-<div id="toolbar" class="toolbar">
-    <ul>
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#exams">Exams</a></li>
-        <li><a href="#subjects">Subjects</a></li>
-        <li><a href="#stats">Stats</a></li>
-        <li><a href="/login">Logout</a></li>
-        
-    </ul>
-</div>
+<header>
+    <div class="header-content">
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#exams">Exams</a></li>
+                <li><a href="#subjects">Subjects</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="/login">Logout</a></li>
+
+            </ul>
+    </div>
+</header>
 
 
 <div ng-controller="MainController">
-    <div class="content">
+    <section class="content">
         <div ng-view></div>
-    </div>
+    </section>
 </div>
 </body>
 

@@ -1,6 +1,7 @@
 .idea/
 *.iml
-app/src/styles/*.css*
+*.css
+*.css.*
 .sass*
 app/node_modules
 node_modules/
