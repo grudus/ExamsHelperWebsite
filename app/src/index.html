@@ -14,10 +14,10 @@
 <header>
     <div class="header-content">
             <ul>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#exams">Exams</a></li>
-                <li><a href="#subjects">Subjects</a></li>
-                <li><a href="#stats">Stats</a></li>
+                <li><a href="#profile" ng-class="{active: location === '/profile' || location === '/'}">Profile</a></li>
+                <li><a href="#exams" ng-class="{active: location === '/exams'}">Exams</a></li>
+                <li><a href="#subjects" ng-class="{active: location === '/subjects'}">Subjects</a></li>
+                <li><a href="#stats" ng-class="{active: location === '/stats'}">Stats</a></li>
                 <li><a href="/login">Logout</a></li>
 
             </ul>

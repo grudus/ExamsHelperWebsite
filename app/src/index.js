@@ -7,6 +7,13 @@ class User {
 }
 
 angular.module('ExamsHelper', ['ngRoute'])
+    .run(function($rootScope, $location) {
+        $rootScope.tabs = ['Profile', 'Exams', 'Subjects', 'Stats'];
+        $rootScope.$on('$routeChangeSuccess', function() {
+            $rootScope.location = $location.path();
+            console.log($rootScope.location);
+        });
+    })
     .constant('BASE_URL', 'http://localhost:8080')
     .factory('TokenService', function () {
         return {

@@ -3,9 +3,19 @@
 
     <ul ng-show="subjects.length" class="two-columns">
         <li ng-repeat="subject in subjects">
-            <div class="dark subject-card card-border" ng-style="{'background': subject.color}">
-                <p>{{subject.label}}</p>
-            </div>
+            <section class="dark subject-card card-border" ng-style="{'background': subject.color}">
+                <div class="subject-card-top">
+                    <div class="circle">
+                        <div id="logo">
+                            {{subject.label[0]}}
+                        </div>
+                    </div>
+                    <p>{{subject.label}}</p>
+                </div>
+                <div class="subject-card-bottom">
+
+                </div>
+            </section>
         </li>
     </ul>
 
