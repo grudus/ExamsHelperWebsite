@@ -40,10 +40,12 @@ angular.module('ExamsHelper', ['ngRoute'])
     })
     .config(['$httpProvider', function ($httpProvider) {
         $httpProvider.interceptors.push('httpRequestInterceptor');
+        $httpProvider.defaults.headers.post = {"Content-Type": "application/json;charset=utf-8"};
     }])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-        // .when('index.html', {redirectTo: '/'})
+            .when('/login', {templateUrl: 'html/login.html'})
+            .when('/register', {templateUrl: 'html/register.html'})
             .when('/', {templateUrl: 'html/user.html'})
             .when('/profile', {templateUrl: 'html/user.html'})
             .when('/exams', {templateUrl: 'html/exams.html'})

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/login.css"/>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<div ng-app="ExamsHelperApp">
+
+
+    <div class="sign_in">
+        <h3 ng-controller="appName">{{appName}}</h3>
+
+        <div ng-view></div>
+
+    </div>
+
+
+</div>
+
+</body>
+<script src="index.js"></script>
+<script src="auth.js"></script>
+<script src="js/login.js"></script>
+<script src="js/register.js"></script>
+</html>

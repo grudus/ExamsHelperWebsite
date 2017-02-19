@@ -1,7 +1,4 @@
-angular.module('ExamsHelperApp', ['ExamsHelper'])
-    .controller('appName', function ($scope) {
-        $scope.appName = 'ExamsHelper';
-    })
+angular.module('ExamsHelperApp')
     .controller('singInForm', function ($scope, $http, TokenService, BASE_URL) {
         TokenService.clear();
         $scope.tryToSignIn = function () {
@@ -23,7 +20,3 @@ angular.module('ExamsHelperApp', ['ExamsHelper'])
             }
         };
     });
-
-
-
-
