@@ -1,7 +1,7 @@
 angular.module('ExamsHelperApp')
     .controller('SignUpController', function ($scope, $http, BASE_URL) {
         $scope.register = function () {
-
+            $scope.error = '';
             const user = {
                 username: $scope.username,
                 password: $scope.password,
@@ -20,9 +20,11 @@ angular.module('ExamsHelperApp')
                 switch (error[0]) {
                     case 'USERNAME.EXISTS':
                         $scope.errors = 'Username already exists';
+                        $scope.error = 'username';
                         break;
                     case 'EMAIL.EXISTS':
                         $scope.errors = 'Email already exists';
+                        $scope.error = 'email';
                         break;
                     default:
                         $scope.errors = 'An error occurs';

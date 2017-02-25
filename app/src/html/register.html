@@ -2,10 +2,10 @@
     <form>
         <p class="error-message" ng-show="errors">{{errors}}</p>
         <div class="inputs">
-            <input type="text" autocomplete required placeholder="username" name="username" id="username"
+            <input type="text" ng-class="error == 'username' ? 'error' : ''" autocomplete required placeholder="username" name="username" id="username"
                    ng-model="username">
-            <input type="email" autocomplete required placeholder="email" name="email" id="email" ng-model="email">
-            <input type="password" required placeholder="password" name="password" id="password" ng-model="password">
+            <input type="email" ng-class="error == 'email' ? 'error' : ''" autocomplete required placeholder="email" name="email" id="email" ng-model="email">
+            <input type="password" ng-class="error == 'password' ? 'error' : ''" required placeholder="password" name="password" id="password" ng-model="password">
         </div>
         <button type="submit" class="button button-block" ng-click="register()">Sign up</button>
 
