@@ -5,7 +5,7 @@ var app = express();
 app.use(express.static(__dirname + '/src'));
 app.use('/lib', express.static(__dirname + '/node_modules'));
 
-app.get('/login', function (req, res) {
+app.get('/auth', function (req, res) {
     res.sendFile('src/auth.html', {root: __dirname})
 });
 

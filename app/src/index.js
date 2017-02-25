@@ -33,19 +33,16 @@ angular.module('ExamsHelper', ['ngRoute'])
     .factory('httpRequestInterceptor', function (TokenService) {
         return {
             request: function (config) {
-                config.headers = {'x-auth-token': TokenService.getToken()};
+                config.headers['X-AUTH-TOKEN'] = TokenService.getToken();
                 return config;
             }
         }
     })
     .config(['$httpProvider', function ($httpProvider) {
         $httpProvider.interceptors.push('httpRequestInterceptor');
-        $httpProvider.defaults.headers.post = {"Content-Type": "application/json;charset=utf-8"};
     }])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when('/login', {templateUrl: 'html/login.html'})
-            .when('/register', {templateUrl: 'html/register.html'})
             .when('/', {templateUrl: 'html/user.html'})
             .when('/profile', {templateUrl: 'html/user.html'})
             .when('/exams', {templateUrl: 'html/exams.html'})
@@ -55,7 +52,7 @@ angular.module('ExamsHelper', ['ngRoute'])
     }])
     .controller('MainController', function ($scope, BASE_URL, TokenService) {
         if (TokenService.getToken() == null)
-            window.location = '/login';
+            window.location = '/auth#/login';
     });
 
 

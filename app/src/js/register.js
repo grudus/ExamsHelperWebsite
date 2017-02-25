@@ -7,8 +7,7 @@ angular.module('ExamsHelperApp')
                 password: $scope.password,
                 email: $scope.email
             };
-            // $http.post(BASE_URL + '/api/auth/register', user)
-
+            
             $http({
                 url: BASE_URL + '/api/auth/register',
                 method: 'POST',
@@ -23,7 +22,5 @@ angular.module('ExamsHelperApp')
                 console.log('error ' + JSON.stringify(error));
             })
 
-        }
-
-    });
+    }});
 

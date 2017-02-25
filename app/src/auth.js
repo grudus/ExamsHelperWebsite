@@ -5,8 +5,8 @@ angular.module('ExamsHelperApp', ['ExamsHelper', 'ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {templateUrl: 'html/login.html'})
+            .when('/login', {templateUrl: 'html/login.html'})
             .when('/register', {templateUrl: 'html/register.html'})
-
     }]);
 
 

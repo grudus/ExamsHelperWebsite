@@ -1,11 +1,12 @@
 angular.module('ExamsHelperApp')
-    .controller('singInForm', function ($scope, $http, TokenService, BASE_URL) {
+    .controller('SignInController', function ($scope, $http, TokenService, BASE_URL) {
         TokenService.clear();
         $scope.tryToSignIn = function () {
             if ($scope.username == '' || $scope.password == '') {
                 alert('Cannot login');
             }
             else {
+                $scope.errors = null;
                 $http({
                     url: BASE_URL + '/api/auth/login',
                     method: 'POST',
@@ -16,6 +17,7 @@ angular.module('ExamsHelperApp')
                     window.location = '/';
                 }).error(function (error) {
                     console.log('error ' + JSON.stringify(error));
+                    $scope.errors = 'Bad credentials. Try again';
                 })
             }
         };

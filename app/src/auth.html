@@ -3,7 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/styles/login.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/auth.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/index.css"/>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
 
@@ -13,16 +14,15 @@
 <body>
 
 <div ng-app="ExamsHelperApp">
-
-
-    <div class="sign_in">
-        <h3 ng-controller="appName">{{appName}}</h3>
-
-        <div ng-view></div>
-
+    <div class="auth card-border">
+        <div class="auth-content">
+            <ul class="tabs">
+                <li class="tab" ng-class="{active: location === '/login'}"><a href="#login">Login</a></li>
+                <li class="tab" ng-class="{active: location === '/register'}"><a href="#register">Register</a></li>
+            </ul>
+            <div ng-view></div>
+        </div>
     </div>
-
-
 </div>
 
 </body>
