@@ -1,9 +1,11 @@
 <div class="sign-form" ng-controller="SignInController">
     <form>
         <p class="error-message" ng-show="errors">{{errors}}</p>
-        <input type="text" autocomplete required placeholder="username" name="username" id="username">
-        <input type="password" required placeholder="password" name="password" id="password">
-
+        <div class="inputs">
+            <input type="text" autocomplete required placeholder="username" name="username" id="username"
+                   ng-model="username">
+            <input type="password" required placeholder="password" name="password" id="password" ng-model="password">
+        </div>
         <button type="submit" class="button button-block" ng-click="tryToSignIn()">Sign in</button>
     </form>
 </div>

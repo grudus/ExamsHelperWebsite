@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
 </head>
-<body>
+<body ng-controller="MainController">
 
 <header>
     <div class="header-content">
@@ -18,14 +18,14 @@
                 <li><a href="#exams" ng-class="{active: location === '/exams'}">Exams</a></li>
                 <li><a href="#subjects" ng-class="{active: location === '/subjects'}">Subjects</a></li>
                 <li><a href="#stats" ng-class="{active: location === '/stats'}">Stats</a></li>
-                <li><a href="/login">Logout</a></li>
+                <li><a href="" ng-click="$event.preventDefault();logout()">Logout</a></li>
 
             </ul>
     </div>
 </header>
 
 
-<div ng-controller="MainController">
+<div>
     <section class="content">
         <div ng-view></div>
     </section>

@@ -53,6 +53,12 @@ angular.module('ExamsHelper', ['ngRoute'])
     .controller('MainController', function ($scope, BASE_URL, TokenService) {
         if (TokenService.getToken() == null)
             window.location = '/auth#/login';
+
+        $scope.logout = function () {
+            console.log("logged out");
+            TokenService.clear();
+            window.location = '/auth#/login';
+        }
     });
 
 
