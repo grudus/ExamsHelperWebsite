@@ -20,7 +20,7 @@ body {
 }
 
 .auth {
-  width: 600px;
+  max-width: 600px;
   max-height: 600px;
   background: $primary-color;
 
@@ -30,7 +30,6 @@ body {
   top: 0;
   bottom: 0;
   margin: auto;
-
 
   overflow: visible;
 
@@ -143,4 +142,10 @@ div {
   text-align: center;
   font-size: 1.1em;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .auth .auth-content .tabs li a {
+    width: 100%;
+  }
 }
