@@ -2,7 +2,14 @@ class User {
     constructor(json) {
         this.email = json.email;
         this.username = json.username;
-        this.registerDate = new Date(json.registerDate).toLocaleDateString("pl");
+        this.registerDate = json.registerDate;
+    };
+
+    /*{"nano":0,"second":35,"minute":55,"hour":0,"dayOfYear":52,"
+    dayOfWeek":"TUESDAY","month":"FEBRUARY","dayOfMonth":21,"year":2017,"monthValue":2,"chronology":{"calendarType":"iso8601","id":"ISO"}} */
+
+    date() {
+        return this.registerDate.dayOfMonth + '/' + this.registerDate.monthValue + '/' + this.registerDate.year;
     }
 }
 
