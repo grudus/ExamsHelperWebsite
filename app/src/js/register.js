@@ -7,9 +7,10 @@ angular.module('ExamsHelperApp')
                 password: $scope.password,
                 email: $scope.email
             };
+            const redirect = 'http://localhost:3000/';
 
             $http({
-                url: BASE_URL + '/api/auth/register',
+                url: BASE_URL + '/api/auth/register?redirect_uri=' + redirect,
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 data: user
