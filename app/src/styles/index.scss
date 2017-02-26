@@ -1,9 +1,9 @@
 $main-font: 'Roboto', sans-serif;
 $main-color: #67727A;
 $main-background: #ededed;
-$primary-color: #388E3C;
+$primary-color: #26A65B;
 $dark-text-color: #e7e7e7;
-$accent-color: #F44336;
+$accent-color: #C0392B;
 
 $max-width: 900px;
 $max-width-mobile: 500px;
@@ -193,6 +193,7 @@ header {
   bottom: 20px;
   position: fixed;
   left: 50%;
+  margin-left: -32px;
 
   &:hover {
     cursor: pointer;
@@ -258,9 +259,54 @@ header {
 }
 
 .ng-modal-dialog-content {
-  padding: 10px;
-  margin-top: 20px;
   text-align: center;
+  height: 100%;
+}
+
+.dialog-buttons {
+  float: right;
+  height: 20%;
+  margin-right: 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .dialog-button {
+    float: right;
+    display: block;
+    font-size: 1.4em;
+    padding: 12px;
+    text-transform: uppercase;
+    color: $accent-color;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}
+
+.ng-modal-dialog-color {
+  height: 80%;
+  background: #9B59B6;
+
+  input {
+    border-bottom: 1px gray solid;
+    background: transparent;
+    color: beige;
+    width: 80%;
+    padding: 12px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.8em;
+    font-family: "Roboto", sans-serif;
+
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .ng-modal-close {

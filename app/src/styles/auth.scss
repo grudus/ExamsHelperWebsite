@@ -1,6 +1,6 @@
 @import "index";
 
-$main: #F44336;
+$main: $accent-color;
 $main-light: lighten($main, 5%);
 $main-dark: darken($main, 5%);
 $white: #ffffff;
@@ -81,7 +81,7 @@ body {
 }
 
 .error {
-  border: 1px red solid;
+  border: 1px $accent-color solid;
   animation: error;
   animation-duration:  0.5s;
   transition: transform 0.5s;
