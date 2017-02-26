@@ -2,7 +2,7 @@
     <p class="no-items" ng-show="!subjects.length">No subjects</p>
 
     <ul ng-show="subjects.length" class="two-columns">
-        <li ng-repeat="subject in subjects">
+        <li ng-repeat="subject in subjects" ng-click="updateSubject(subject)">
             <section class="dark subject-card card-border" ng-style="{'background': subject.color}">
                 <div class="subject-card-top">
                     <div class="circle">
@@ -19,4 +19,10 @@
         </li>
     </ul>
 
+
+    <div class="fat" ng-click='toggleModal()'>
+        +
+    </div>
+
+    <modal-dialog  subject='updatedSubject' show='modalShown' width='500px' height='80%'></modal-dialog>
 </div>

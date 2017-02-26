@@ -3,6 +3,7 @@ $main-color: #67727A;
 $main-background: #ededed;
 $primary-color: #388E3C;
 $dark-text-color: #e7e7e7;
+$accent-color: #F44336;
 
 $max-width: 900px;
 $max-width-mobile: 500px;
@@ -135,7 +136,7 @@ header {
     p {
       text-align: center;
       font-size: 1.6em;
-      position:absolute;
+      position: absolute;
       left: 0;
       right: 0;
       bottom: 30px;
@@ -168,7 +169,7 @@ header {
   font-family: "Roboto", sans-serif;
   width: 64px;
   height: 64px;
-  line-height:64px;
+  line-height: 64px;
   font-size: 2em;
   border: 2px solid #eeeeee;
   color: #eeeeee;
@@ -177,6 +178,26 @@ header {
   left: 0;
   right: 0;
   margin: 0 auto;
+}
+
+.fat {
+  border-radius: 100%;
+  background: $accent-color;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  line-height: 64px;
+  font-size: 2em;
+  color: $dark-text-color;
+  transition: transform .1s ease-in-out;
+  bottom: 20px;
+  position: fixed;
+  left: 50%;
+
+  &:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+  }
 }
 
 @media (max-width: 768px) {
@@ -207,4 +228,49 @@ header {
     width: 100%;
     margin: 10px 0;
   }
+}
+
+//-------------- DIALOG -----------------
+.ng-modal-overlay {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.8;
+}
+
+.ng-modal-dialog {
+  z-index: 10000;
+  position: absolute;
+  width: 50%; /* Default */
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+}
+
+.ng-modal-dialog-content {
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
 }
