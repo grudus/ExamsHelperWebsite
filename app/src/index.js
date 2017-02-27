@@ -6,7 +6,7 @@ class User {
     };
 
     /*{"nano":0,"second":35,"minute":55,"hour":0,"dayOfYear":52,"
-    dayOfWeek":"TUESDAY","month":"FEBRUARY","dayOfMonth":21,"year":2017,"monthValue":2,"chronology":{"calendarType":"iso8601","id":"ISO"}} */
+     dayOfWeek":"TUESDAY","month":"FEBRUARY","dayOfMonth":21,"year":2017,"monthValue":2,"chronology":{"calendarType":"iso8601","id":"ISO"}} */
 
     date() {
         return this.registerDate.dayOfMonth + '/' + this.registerDate.monthValue + '/' + this.registerDate.year;
@@ -14,9 +14,9 @@ class User {
 }
 
 angular.module('ExamsHelper', ['ngRoute'])
-    .run(function($rootScope, $location) {
+    .run(function ($rootScope, $location) {
         $rootScope.tabs = ['Profile', 'Exams', 'Subjects', 'Stats'];
-        $rootScope.$on('$routeChangeSuccess', function() {
+        $rootScope.$on('$routeChangeSuccess', function () {
             $rootScope.location = $location.path();
             console.log($rootScope.location);
         });

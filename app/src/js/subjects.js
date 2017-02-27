@@ -11,7 +11,7 @@ angular.module('ExamsHelper')
 
 
         $scope.modalShown = false;
-        $scope.toggleModal = function() {
+        $scope.toggleModal = function () {
             $scope.modalShown = !$scope.modalShown;
             $scope.updatedSubject = null;
         };
@@ -31,12 +31,10 @@ angular.module('ExamsHelper')
             replace: true,
             transclude: true,
             link: function (scope, element, attrs) {
-                let colors = ['#EC644B', '#D24D57', '#DB0A5B', '#F64747', '#F1A9A0', '#D2527F', '#F62459', '#DCC6E0', '#663399', '#674172', '#AEA8D3', '#446CB3', '#E4F1FE', '#4183D7', '#81CFE0', '#4ECDC4', '#A2DED0', '#87D37C', '#90C695', '#03C9A9', '#68C3A3', '#F5D76E', '#e9d460', '#FDE3A7', '#F89406', '#ececec', '#6C7A89']
+                scope.colorIndex = 0;
+                scope.colors = ['#EC644B', '#F1A9A0', '#F62459', '#663399', '#AEA8D3', '#81CFE0', '#A2DED0', '#68C3A3', '#F89406', '#6C7A89'];
                 scope.dialogStyle = {};
-                scope.randomColor = function () {
-                    let color = colors[Math.floor(Math.random()*colors.length)];
-                    return color;
-                };
+
                 if (attrs.width)
                     scope.dialogStyle.width = attrs.width;
                 if (attrs.height)
@@ -45,15 +43,17 @@ angular.module('ExamsHelper')
                     scope.show = false;
                 };
 
+                scope.selectColor = function (index) {
+                    scope.colorIndex = index;
+                };
+
                 scope.saveSubject = function (subject) {
                     scope.hideModal();
-                    let label = document.getElementById('ng-modal-dialog-subject-label').value;
-                    let color = document.getElementById('ng-modal-dialog-subject-color').value;
                     if (subject) {
                         console.log(JSON.parse(JSON.stringify(subject)));
-                    } else color = scope.randomColor();
-                    console.log("new label: " + label);
-                    console.log("new color: " + color);
+                        subject.label = scope.subjectLabel;
+                        subject.color = scope.colors[scope.colorIndex];
+                    }
                 }
             },
             templateUrl: 'html/subjects-dialog.html'

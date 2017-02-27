@@ -3,10 +3,26 @@
     <div class='ng-modal-dialog' ng-style='dialogStyle'>
         <div class='ng-modal-dialog-content'>
 
-            <div class="ng-modal-dialog-color" ng-style="{background: subject.color}">
+            <div class="ng-modal-dialog-header">
+                <h2 ng-show="subject.label">Edit subject</h2>
+                <h2 ng-show="!subject.label">Add new subject</h2>
+            </div>
 
-                <input type="text" id="ng-modal-dialog-subject-label" ng-value="subject.label" placeholder="Label">
-                <input type="color" hidden disabled id="ng-modal-dialog-subject-color" ng-value="subject.color" value="#9B59B6">
+
+            <div class="material-input">
+                <input type="text" required id="label" name="label" ng-value="subject.label" ng-model="subjectLabel">
+                <label for="label">Subject's Label</label>
+            </div>
+
+            <div class="ng-modal-dialog-colors">
+                <h4>Colors</h4>
+
+                <ul class="colors">
+                    <li ng-repeat="color in colors" ng-click="selectColor($index)">
+                        <div class="color" ng-style="{background: color}" ng-class="colorIndex == $index ? 'selected-color' : ''"></div>
+                    </li>
+                </ul>
+
             </div>
 
             <div class="dialog-buttons">
