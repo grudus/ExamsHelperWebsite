@@ -35,10 +35,22 @@ angular.module('ExamsHelper')
                 scope.colors = ['#EC644B', '#F1A9A0', '#F62459', '#663399', '#AEA8D3', '#81CFE0', '#A2DED0', '#68C3A3', '#F89406', '#6C7A89'];
                 scope.dialogStyle = {};
 
+                scope.$watch("subject", function (val) {
+                    if (!val) return;
+                    scope.colorIndex = scope.colors.findIndex(x => x == val.color);
+                    scope.subjectLabel = val.label;
+                });
+
+                scope.$watch("show", function (val) {
+                    if (val)
+                        scope.show = val;
+                });
+
                 if (attrs.width)
                     scope.dialogStyle.width = attrs.width;
                 if (attrs.height)
                     scope.dialogStyle.height = attrs.height;
+
                 scope.hideModal = function () {
                     scope.show = false;
                 };
