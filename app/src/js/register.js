@@ -18,18 +18,21 @@ angular.module('ExamsHelperApp')
                 console.log('success! ' + data);
                 $scope.errors = 'Confirmation message was sent to your email'
             }).error(function (error) {
-                switch (error[0]) {
-                    case 'USERNAME.EXISTS':
-                        $scope.errors = 'Username already exists';
-                        $scope.error = 'username';
-                        break;
-                    case 'EMAIL.EXISTS':
-                        $scope.errors = 'Email already exists';
-                        $scope.error = 'email';
-                        break;
-                    default:
-                        $scope.errors = 'An error occurs';
-                }
+                if (!error)
+                    $scope.errors = 'Cannot connect to the server';
+                else
+                    switch (error[0]) {
+                        case 'USERNAME.EXISTS':
+                            $scope.errors = 'Username already exists';
+                            $scope.error = 'username';
+                            break;
+                        case 'EMAIL.EXISTS':
+                            $scope.errors = 'Email already exists';
+                            $scope.error = 'email';
+                            break;
+                        default:
+                            $scope.errors = 'An error occurs';
+                    }
             })
 
         }

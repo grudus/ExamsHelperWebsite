@@ -16,8 +16,7 @@ angular.module('ExamsHelperApp')
                     TokenService.setToken(headers()['x-auth-token']);
                     window.location = '/';
                 }).error(function (error) {
-                    console.log('error ' + JSON.stringify(error));
-                    $scope.errors = 'Bad credentials. Try again';
+                        $scope.errors = error ? 'Bad credentials. Try again' : 'Cannot connect to the server';
                 })
             }
         };
