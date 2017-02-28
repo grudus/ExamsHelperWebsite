@@ -21,7 +21,7 @@ angular.module('ExamsHelper')
             $scope.modalShown = true;
         };
     })
-    .directive('modalDialog', function () {
+    .directive('modalDialog', function ($http, BASE_URL) {
         return {
             restrict: 'E',
             scope: {
@@ -60,13 +60,27 @@ angular.module('ExamsHelper')
                     scope.colorIndex = index;
                 };
 
-                scope.saveSubject = function (subject) {
-                    scope.hideModal();
-                    if (subject) {
-                        console.log(JSON.parse(JSON.stringify(subject)));
-                        subject.label = scope.subjectLabel;
-                        subject.color = scope.colors[scope.colorIndex];
+                scope.saveOrUpdateSubject = function (subject) {
+                    let method = 'PUT';
+
+                    if (!subject) {
+                        subject = {label: '', color: ''};
+                        method = 'POST';
                     }
+
+                    subject.label = scope.subjectLabel;
+                    subject.color = scope.colors[scope.colorIndex];
+
+                    $http({
+                        url: BASE_URL + '/api/subjects',
+                        method: method,
+                        headers: {'Content-Type': 'application/json'},
+                        data: subject
+                    }).success(function (data) {
+                        console.log('success!');
+                    });
+
+                    scope.hideModal();
                 }
             },
             templateUrl: 'html/subjects-dialog.html'
