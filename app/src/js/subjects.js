@@ -32,7 +32,8 @@ angular.module('ExamsHelper')
             transclude: true,
             link: function (scope, element, attrs) {
                 scope.colorIndex = 0;
-                scope.colors = ['#EC644B', '#F1A9A0', '#F62459', '#663399', '#AEA8D3', '#81CFE0', '#A2DED0', '#68C3A3', '#F89406', '#6C7A89'];
+                scope.colors = ['#2c3e50', '#1abc9c', '#3498db', '#9b59b6', '#1E824C',
+                    '#d35400', '#e74c3c', '#f39c12', '#8e44ad', '#6C7A89'];
                 scope.dialogStyle = {};
 
                 scope.$watch("subject", function (val) {
