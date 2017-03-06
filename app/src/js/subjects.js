@@ -20,6 +20,17 @@ angular.module('ExamsHelper')
             $scope.updatedSubject = subject;
             $scope.modalShown = true;
         };
+
+        $scope.deleteSubject = function (subject, event) {
+            $http({
+                url: BASE_URL + `/api/subjects/${subject.id}`,
+                method: 'DELETE'
+            }).success(function (data) {
+                console.log('success!');
+                $scope.subjects = $scope.subjects.filter(sub => sub !== subject);
+            });
+            event.stopPropagation();
+        }
     })
     .directive('modalDialog', function ($http, BASE_URL) {
         return {
