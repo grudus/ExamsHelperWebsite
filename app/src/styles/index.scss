@@ -233,7 +233,7 @@ header {
 
 //-------------- DIALOG -----------------
 .ng-modal-overlay {
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   top: 0;
   left: 0;
@@ -245,7 +245,7 @@ header {
 
 .ng-modal-dialog {
   z-index: 10000;
-  position: absolute;
+  position: fixed;
   width: 50%; /* Default */
 
   top: 50%;
