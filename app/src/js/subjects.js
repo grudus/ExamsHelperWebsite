@@ -26,6 +26,7 @@ angular.module('ExamsHelper')
             restrict: 'E',
             scope: {
                 show: '=',
+                subjects: '=',
                 subject: '='
             },
             replace: true,
@@ -42,9 +43,12 @@ angular.module('ExamsHelper')
                     scope.subjectLabel = val.label;
                 });
 
-                scope.$watch("show", function (val) {
-                    if (val)
-                        scope.show = val;
+                scope.$watch("show", val => {
+                    if (val) scope.show = val;
+                });
+
+                scope.$watch("subjects", val => {
+                    if (val) scope.subjects = val
                 });
 
                 if (attrs.width)
@@ -66,6 +70,7 @@ angular.module('ExamsHelper')
                     if (!subject) {
                         subject = {label: '', color: ''};
                         method = 'POST';
+                        scope.subjects.push(subject);
                     }
 
                     subject.label = scope.subjectLabel;
