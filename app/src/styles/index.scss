@@ -8,6 +8,9 @@ $accent-color: #C0392B;
 $max-width: 900px;
 $max-width-mobile: 500px;
 
+$circle-size-big: 64px;
+$circle-size-small: 40px;
+
 * {
   margin: 0;
   padding: 0;
@@ -171,9 +174,9 @@ header {
 
 .circle {
   font-family: "Roboto", sans-serif;
-  width: 64px;
-  height: 64px;
-  line-height: 64px;
+  width: $circle-size-big;
+  height: $circle-size-big;
+  line-height: $circle-size-big;
   font-size: 2em;
   border: 2px solid #eeeeee;
   color: #eeeeee;
@@ -252,6 +255,41 @@ header {
     margin: 10px 0;
   }
 }
+
+.card-group-title {
+  padding: 10px;
+  font-weight: 700;
+}
+
+.card-group-item {
+  margin: 15px 0 15px;
+  height: 48px;
+}
+
+.card-group-item-content {
+  float: left;
+  margin-left: 32px;
+  text-align: left;
+}
+
+.card-group-item-title {
+  font-weight: 700;
+}
+
+
+.exam {
+  .circle {
+    width: $circle-size-small;
+    height: $circle-size-small;
+    line-height: $circle-size-small;
+    margin-top: 4px;
+    position: static;
+    float: left;
+    border: none;
+    font-size: 1.2em;
+  }
+}
+
 
 //-------------- DIALOG -----------------
 .ng-modal-overlay {
@@ -390,4 +428,3 @@ header {
   }
 
 }
-

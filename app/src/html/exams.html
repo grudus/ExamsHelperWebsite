@@ -1,3 +1,22 @@
-<div>
-    <p class="no-items">No exams</p>
+<div ng-controller="ExamsController">
+    <p ng-show="!exams" class="no-items">No exams</p>
+    <section ng-show="exams">
+        <ul>
+            <li ng-repeat="(date, dateExams) in exams">
+                <div class="card-group-title">{{date}}</div>
+                <ul>
+                    <li ng-repeat="exam in dateExams">
+                        <div class="card card-border card-group-item exam">
+                            <div class="circle" ng-style="{'background': exam.subject.color}">{{exam.subject.label[0]}}</div>
+                            <div class="card-group-item-content">
+                                <div class="card-group-item-title">{{exam.subject.label}}</div>
+                                <div class="card-group-item-description">{{exam.info}}</div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
 </div>
