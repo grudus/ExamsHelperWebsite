@@ -1,12 +1,12 @@
 angular.module('ExamsHelper')
     .controller('ExamsController', function ($scope, $http, BASE_URL) {
-        $scope.exams = {};
         $http({
             url: BASE_URL + "/api/exams",
             method: 'GET'
         }).success(function (data) {
-            JSON.parse(JSON.stringify(data))
-                .sort((exam1, exam2) => exam2.date.localeCompare(exam1.date))
+            if (data.length)
+                $scope.exams = {};
+            data.sort((exam1, exam2) => exam2.date.localeCompare(exam1.date))
                 .forEach(exam => {
                     const key = exam.date.split(" ")[0];
                     if (key in $scope.exams == false) {
