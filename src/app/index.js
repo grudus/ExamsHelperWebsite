@@ -1,4 +1,5 @@
 import "../assets/sass/materialize.scss";
+import "../assets/sass/exams.scss";
 import "./text.js"
 
 import angular from "angular";
