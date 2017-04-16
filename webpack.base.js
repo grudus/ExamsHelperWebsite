@@ -4,12 +4,6 @@ const path = require('path');
 
 module.exports = {
     entry: "./src/app/index.js",
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: "bundle.js",
-        publicPath: "/dist"
-    },
-
     plugins: [
         new ExtractTextPlugin("styles.css"),
         new webpack.ProvidePlugin({
@@ -23,6 +17,10 @@ module.exports = {
             {
                 test: /\.js$/, exclude: /(node_modules)/,
                 loaders: ['ng-annotate-loader', {loader: 'babel-loader', options: {presets: ['es2015']}}]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader',
+                options: {limit: 10000, name: '/assets/iconfont/[name].[ext]'}
             },
             {
                 test: /\.(png|jpg|svg)$/,

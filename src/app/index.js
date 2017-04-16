@@ -1,3 +1,2 @@
-import Dupa from './exxx.js';
-
-document.getElementById('app').innerHTML = Dupa();
+import "../assets/sass/materialize.scss";
+import "./text.js"
