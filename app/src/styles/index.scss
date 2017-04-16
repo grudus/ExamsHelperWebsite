@@ -294,7 +294,7 @@ header {
 //-------------- DIALOG -----------------
 .ng-modal-overlay {
   position: fixed;
-  z-index: 9999;
+  z-index: 9998;
   top: 0;
   left: 0;
   width: 100%;
@@ -386,6 +386,15 @@ header {
 }
 
 //#######input
+
+
+.dropdown {
+  padding: 5px;
+}
+
+.subjects {
+  margin-top: 10px;
+}
 
 .material-input {
   position: relative;

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/grudus/ExamsHelperWebsite#readme",
   "dependencies": {
     "angular": "1.5.8",
-    "angular-route": "1.6.1"
+    "angular-route": "1.6.1",
+    "express":  "^4.15.2"
   }
 }

@@ -5,7 +5,7 @@
             <li ng-repeat="(date, dateExams) in exams">
                 <div class="card-group-title">{{date}}</div>
                 <ul>
-                    <li ng-repeat="exam in dateExams">
+                    <li ng-repeat="exam in dateExams" ng-click="updateExam(exam)">
                         <div class="card card-border card-group-item exam">
                             <div class="circle" ng-style="{'background': exam.subject.color}">{{exam.subject.label[0]}}</div>
                             <div class="card-group-item-content">
@@ -19,4 +19,11 @@
             </li>
         </ul>
     </section>
+
+    <div class="fat" ng-click='toggleModal()'>
+        +
+    </div>
+
+    <edit-exam-dialog exam='updatedExam' exams='exams' subjects="subjects" show='modalShown' width='400px' height='50%'></edit-exam-dialog>
+
 </div>

@@ -16,7 +16,7 @@ ul {
   list-style-type: none; }
 
 header {
-  background: #388E3C;
+  background: #26A65B;
   position: fixed;
   opacity: 0.98;
   left: 0;
@@ -87,6 +87,8 @@ header {
     text-align: center;
     height: 186px;
     position: relative; }
+    .subject-card .subject-card-top:hover .delete-x {
+      visibility: visible; }
     .subject-card .subject-card-top .circle {
       position: absolute;
       top: 30px; }
@@ -123,6 +125,38 @@ header {
   right: 0;
   margin: 0 auto; }
 
+.fat {
+  border-radius: 100%;
+  background: #C0392B;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  line-height: 64px;
+  font-size: 2em;
+  color: #e7e7e7;
+  transition: transform .1s ease-in-out;
+  bottom: 20px;
+  position: fixed;
+  left: 50%;
+  margin-left: -32px; }
+  .fat:hover {
+    cursor: pointer;
+    transform: rotate(90deg); }
+
+.delete-x {
+  display: block;
+  font-size: 1.2em;
+  color: #e7e7e7;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: 700;
+  padding: 10px;
+  visibility: hidden; }
+  .delete-x:hover {
+    font-size: 1.4em;
+    text-shadow: -1px 0 #C0392B, 0 1px #C0392B, 1px 0 #C0392B, 0 -1px #C0392B; }
+
 @media (max-width: 768px) {
   .header-content {
     max-width: 500px;
@@ -141,5 +175,140 @@ header {
   .subject-card {
     width: 100%;
     margin: 10px 0; } }
+.card-group-title {
+  padding: 10px;
+  font-weight: 700; }
+
+.card-group-item {
+  margin: 15px 0 15px;
+  height: 48px; }
+
+.card-group-item-content {
+  float: left;
+  margin-left: 32px;
+  text-align: left; }
+
+.card-group-item-title {
+  font-weight: 700; }
+
+.exam .circle {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 4px;
+  position: static;
+  float: left;
+  border: none;
+  font-size: 1.2em; }
+
+.ng-modal-overlay {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.8; }
+
+.ng-modal-dialog {
+  z-index: 10000;
+  position: fixed;
+  width: 50%;
+  /* Default */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 4px 4px 40px #000; }
+
+.ng-modal-dialog-content {
+  padding: 16px;
+  text-align: center;
+  height: 100%;
+  background: beige; }
+
+.ng-modal-dialog-header {
+  margin-top: 8px; }
+
+.dialog-buttons {
+  float: right;
+  margin-right: 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 10px; }
+  .dialog-buttons .dialog-button {
+    float: right;
+    display: block;
+    font-size: 1.1em;
+    padding: 12px;
+    text-transform: uppercase;
+    color: #1d7d44;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif; }
+    .dialog-buttons .dialog-button:hover {
+      cursor: pointer; }
+
+.ng-modal-dialog-colors h4 {
+  margin: 10px; }
+.ng-modal-dialog-colors .colors {
+  max-width: 95%;
+  margin: auto; }
+  .ng-modal-dialog-colors .colors .color {
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    float: left;
+    margin: 8px;
+    border: 2px solid transparent; }
+    .ng-modal-dialog-colors .colors .color:hover {
+      border: 2px solid #26A65B;
+      cursor: pointer; }
+  .ng-modal-dialog-colors .colors .selected-color {
+    border: 2px solid #1d7d44; }
+
+.dropdown {
+  padding: 5px; }
+
+.subjects {
+  margin-top: 10px; }
+
+.material-input {
+  position: relative;
+  margin: 32px 0 45px;
+  max-width: 75%;
+  /* active state */ }
+  .material-input input {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+    background: transparent; }
+  .material-input input:focus {
+    outline: none; }
+  .material-input label {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 15px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all; }
+  .material-input input:focus ~ label, .material-input input:valid ~ label {
+    top: -12px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #5264AE; }
 
 /*# sourceMappingURL=index.css.map */
