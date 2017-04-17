@@ -13,7 +13,8 @@ export default ($stateProvider, $urlRouterProvider, $httpProvider, $locationProv
 
     $stateProvider
         .state('app', {
-            url: '/',
+            //todo auth stuff
+            abstract: true,
             component: "app"
         })
 

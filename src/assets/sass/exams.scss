@@ -2,10 +2,36 @@
     margin: 0;
     padding: 0;
     border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 $background: #ededed;
 
 body {
     background: $background;
+}
+
+.m-r-25 {
+    margin-right: 25px !important;
+}
+
+.m-t-100 {
+    margin-top: 100px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.p-b-10 {
+    padding-bottom: 10px;
+}
+
+.bor-rad {
+    border-radius: 10px;
+}
+
+.text {
+    color: #67727A
 }

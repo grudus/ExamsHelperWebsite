@@ -9,7 +9,8 @@ import translateCookie from "angular-translate-storage-cookie";
 import translateLoader from "angular-translate-loader-static-files";
 import angularCookies from "angular-cookies";
 
-import Appl from "./panel/app.index"
+import App from "./panel/app.index"
+import User from "./user/user.index"
 
 import Config from "./config"
 
@@ -21,7 +22,8 @@ angular.module("ExamsHelper", [
     translateCookie,
     translateLoader,
 
-    Appl
+    App,
+    User
 ]).config(Config);
 
 angular.element(document).ready(function ($state) {
