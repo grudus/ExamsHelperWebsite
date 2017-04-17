@@ -12,13 +12,9 @@ export default ($stateProvider, $urlRouterProvider, $httpProvider, $locationProv
         }).determinePreferredLanguage();
 
     $stateProvider
-        .state('appl', {
+        .state('app', {
             url: '/',
             component: "app"
         })
-        .state('dupa', {
-            url: '/dupa',
-            template: '<div>Dupa</div>'
-        });
 
 }

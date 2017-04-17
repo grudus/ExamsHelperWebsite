@@ -1,4 +1,10 @@
 {
-  "DUPA": "dupa",
-  "TITLE": "ExamsHelper"
+  "TITLE": "ExamsHelper",
+  "MENU": {
+    "PROFILE": "Profile",
+    "EXAMS": "Exams",
+    "SUBJECTS": "Subjects",
+    "STATS": "Stats",
+    "LOGOUT": "Logout"
+  }
 }
