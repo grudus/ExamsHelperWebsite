@@ -10,6 +10,8 @@ import translateCookie from "angular-translate-storage-cookie";
 import translateLoader from "angular-translate-loader-static-files";
 import angularCookies from "angular-cookies";
 
+import Appl from "./panel/app.index"
+
 import Config from "./config"
 
 angular.module("ExamsHelper", [
@@ -18,9 +20,11 @@ angular.module("ExamsHelper", [
     translate,
     translateLocal,
     translateCookie,
-    translateLoader
+    translateLoader,
+
+    Appl
 ]).config(Config);
 
-angular.element(document).ready(function () {
+angular.element(document).ready(function ($state) {
     angular.bootstrap(document, ["ExamsHelper"], {strictDi: true});
 });

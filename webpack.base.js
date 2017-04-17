@@ -19,6 +19,10 @@ module.exports = {
                 loaders: ['ng-annotate-loader', {loader: 'babel-loader', options: {presets: ['es2015']}}]
             },
             {
+                test: /\.html$/,
+                loader: "ng-cache-loader?-url"
+            },
+            {
                 test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader',
                 options: {limit: 10000, name: '/assets/iconfont/[name].[ext]'}
             },
