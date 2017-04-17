@@ -1,8 +1,12 @@
 require('./user.html');
 
 class User {
-    constructor() {
-        console.log('User constructor')
+    /*@ngInject*/
+    constructor(UserService) {
+        this.UserService = UserService;
+        console.log('User constructor');
+
+        this.UserService.get();
     }
 }
 

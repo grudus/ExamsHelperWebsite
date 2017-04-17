@@ -8,6 +8,7 @@ import translateLocal from "angular-translate-storage-local";
 import translateCookie from "angular-translate-storage-cookie";
 import translateLoader from "angular-translate-loader-static-files";
 import angularCookies from "angular-cookies";
+import ngResource from "angular-resource";
 
 import App from "./panel/app.index"
 import User from "./user/user.index"
@@ -21,10 +22,13 @@ angular.module("ExamsHelper", [
     translateLocal,
     translateCookie,
     translateLoader,
+    ngResource,
 
     App,
     User
-]).config(Config);
+]).config(Config)
+    .constant('API', 'http://localhost:8080/api')
+;
 
 angular.element(document).ready(function ($state) {
     angular.bootstrap(document, ["ExamsHelper"], {strictDi: true});
