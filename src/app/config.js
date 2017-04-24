@@ -13,9 +13,13 @@ export default ($stateProvider, $urlRouterProvider, $httpProvider, $locationProv
 
     $stateProvider
         .state('app', {
-            //todo auth stuff
-            abstract: true,
-            component: "app"
-        })
+                abstract: true,
+                component: "app",
+                resolve: {
+                    access: (Authorization, $state) =>
+                        Authorization.checkUserAccess($state)
+                }
+            }
+        )
 
 }

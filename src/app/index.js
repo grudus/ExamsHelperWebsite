@@ -10,6 +10,7 @@ import translateLoader from "angular-translate-loader-static-files";
 import angularCookies from "angular-cookies";
 import ngResource from "angular-resource";
 
+import Auth from "./auth/auth.index"
 import App from "./panel/app.index"
 import User from "./user/user.index"
 
@@ -24,10 +25,12 @@ angular.module("ExamsHelper", [
     translateLoader,
     ngResource,
 
+    Auth,
     App,
     User
 ]).config(Config)
     .constant('API', 'http://localhost:8080/api')
+    .constant('AUTH_HEADER', 'X-AUTH-TOKEN')
 ;
 
 angular.element(document).ready(function ($state) {
