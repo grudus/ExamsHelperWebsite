@@ -1,4 +1,4 @@
 /*@ngInject*/
-export default ($resource, API) => $resource(API + '/:resource', {}, {
-    login: {method: 'POST', params: {resource: 'login'}}
+export default ($resource, API) => $resource(API + '/auth/:resource', {}, {
+    login: {method: 'POST', headers: {withCredentials: true}, params: {resource: 'login'}}
 });

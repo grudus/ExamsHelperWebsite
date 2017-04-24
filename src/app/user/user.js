@@ -6,7 +6,12 @@ class User {
         this.UserService = UserService;
         console.log('User constructor');
 
-        this.UserService.get();
+        this.UserService.get({}, (resopnse) => {
+            this.username = resopnse.username;
+            this.email = resopnse.email;
+            this.registerDate = resopnse.registerDate;
+            window.console.log(resopnse);
+        });
     }
 }
 

@@ -9,9 +9,8 @@ class Login {
     }
 
     login() {
-        window.console.log("logging in!");
-        this.Authorization.login({});
-        this.$state.go("app.user");
+        this.Authorization.login({username: this.username, password: this.password},
+            () => {console.log("loggedIn")}, () => console.log("error"))
     }
 }
 

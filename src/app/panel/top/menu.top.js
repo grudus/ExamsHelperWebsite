@@ -1,7 +1,13 @@
 require("./menu.top.html");
 
 class TopMenu {
-    constructor() {
+    /*@ngInject*/
+    constructor(Authorization) {
+        this.Authorization = Authorization;
+    }
+
+    logout() {
+        this.Authorization.logout();
     }
 }
 

@@ -1,6 +1,6 @@
 export default class Authorization {
     /*@ngInject*/
-    constructor(AUTH_HEADER, $window, AuthService, $state, $stateParams, $q, $timeout) {
+    constructor(AUTH_HEADER, $window, AuthService, $state, $http, $stateParams, $q, $timeout) {
         window.console.log("AAuthA constructor");
         this.$stateParams = $stateParams;
         this.header = AUTH_HEADER;
@@ -9,6 +9,7 @@ export default class Authorization {
         this.$state = $state;
         this.$q = $q;
         this.$timeout = $timeout;
+        this.$http = $http;
     }
 
 
@@ -22,22 +23,40 @@ export default class Authorization {
             });
             return this.$q.reject('You have to be authenticated to see this content')
         }
+        this.addDefaultTokenHeader();
         return this.$q.when();
 
     }
 
     isOnline() {
-        return this.$localStorage.auth;
+        return this.$localStorage[this.header];
     }
 
-    login(user) {
+    setAuth(token) {
+        if (!this.$localStorage[this.header]) {
+            this.$localStorage[this.header] = token;
+            this.addDefaultTokenHeader();
+        }
+    }
+
+    addDefaultTokenHeader() {
+        this.$http.defaults.headers.common[this.header] =
+            this.$localStorage[this.header];
+    }
+
+    logout() {
+        this.$localStorage.removeItem(this.header);
+        this.$state.go("auth.login");
+    }
+
+    login(user, successCallback, errorCallback) {
         window.console.log("AAuthA login");
-        this.$localStorage.auth = "dupa";
-        // this.AuthService.login({}, {username: user.username, password: user.password},
-        //     (response, d, headers) => {
-        //         console.log("Logged in");
-        //         console.log(response);
-        //         console.log(headers);
-        //     }, error => console.log(error));
+        window.console.log(user);
+        this.AuthService.login({username: user.username, password: user.password}, {}, (a, b, c, d) => {
+            successCallback();
+            window.console.log(b());
+            this.setAuth(b()[this.header.toLowerCase()]);
+            this.$state.go("app.user");
+        }, (error) => errorCallback())
     }
 }
