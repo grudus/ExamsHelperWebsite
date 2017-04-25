@@ -1,18 +1,19 @@
 <div class="valign-wrapper max-height">
     <div class="row center-align">
         <h4 class="row p-20 grey-text text-darken-1" translate="AUTH.LOGIN.TITLE"></h4>
+        <div ng-if="$ctrl.error" translate="AUTH.LOGIN.ERROR" class="red lighten-4 p-20 m-b-10 bor-rad"></div>
         <form ng-submit="$ctrl.login()" class="col s12 card">
             <div class="login">
                 <div class='row col s12'>
                     <div class='input-field col s12'>
-                        <input class='validate' type='text' name='username' id='username'/>
+                        <input class='validate' type='text' name='username' id='username' ng-model="$ctrl.username"/>
                         <label for='username' translate="AUTH.LOGIN.USERNAME"></label>
                     </div>
                 </div>
 
                 <div class='row col s12'>
                     <div class='input-field col s12'>
-                        <input class='validate' type='password' name='password' id='password'/>
+                        <input class='validate' type='password' name='password' id='password' ng-model="$ctrl.password"/>
                         <label for='password' translate="AUTH.LOGIN.PASSWORD"></label>
                     </div>
                 </div>

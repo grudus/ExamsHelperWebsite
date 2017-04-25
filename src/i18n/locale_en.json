@@ -11,7 +11,8 @@
     "LOGIN": {
       "USERNAME": "Enter your username",
       "PASSWORD": "Enter your password",
-      "TITLE": "Please, login into your account"
+      "TITLE": "Sign in to ExamsHelper",
+      "ERROR": "Invalid username or password"
     }
   }
 }

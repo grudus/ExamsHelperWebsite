@@ -10,7 +10,12 @@ class Login {
 
     login() {
         this.Authorization.login({username: this.username, password: this.password},
-            () => {console.log("loggedIn")}, () => console.log("error"))
+            () => {
+                console.log("loggedIn")
+            }, () => {
+                this.error = true;
+                this.password = "";
+            })
     }
 }
 
