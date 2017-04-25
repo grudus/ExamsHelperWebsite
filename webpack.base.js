@@ -27,7 +27,7 @@ module.exports = {
                 options: {limit: 10000, name: '/assets/iconfont/[name].[ext]'}
             },
             {
-                test: /\.(png|jpg|svg)$/,
+                test: /\.(png|jpg|svg|ico)$/,
                 loader: 'url-loader',
                 options: {limit: 10000, name: '/assets/img/[name].[ext]'}
             },
