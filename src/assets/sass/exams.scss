@@ -1,37 +1,49 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 $background: #ededed;
 
 body {
-    background: $background;
+  background: $background;
 }
 
 .m-r-25 {
-    margin-right: 25px !important;
+  margin-right: 25px !important;
 }
 
 .m-t-100 {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .p-20 {
-    padding: 20px;
+  padding: 20px;
+}
+
+.login {
+  padding: 32px 48px 0 48px;
 }
 
 .p-b-10 {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .bor-rad {
-    border-radius: 10px;
+  border-radius: 10px;
+}
+
+.max-height {
+  height: 100vh
+}
+
+.border {
+  border: 1px solid red;
 }
 
 .text {
-    color: #67727A
+  color: #67727A
 }

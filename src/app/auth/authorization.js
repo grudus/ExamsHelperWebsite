@@ -50,12 +50,9 @@ export default class Authorization {
     }
 
     login(user, successCallback, errorCallback) {
-        window.console.log("AAuthA login");
-        window.console.log(user);
-        this.AuthService.login({username: user.username, password: user.password}, {}, (a, b, c, d) => {
+        this.AuthService.login({username: user.username, password: user.password}, {}, (response, headers) => {
             successCallback();
-            window.console.log(b());
-            this.setAuth(b()[this.header.toLowerCase()]);
+            this.setAuth(headers()[this.header.toLowerCase()]);
             this.$state.go("app.user");
         }, (error) => errorCallback())
     }

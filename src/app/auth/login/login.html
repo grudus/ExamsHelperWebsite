@@ -1,7 +1,24 @@
-<div>
-    <form ng-submit="$ctrl.login()">
-        <input type="text" placeholder="username" ng-model="$ctrl.username">
-        <input type="password" placeholder="password" ng-model="$ctrl.password">
-        <input type="submit">Submit
-    </form>
+<div class="valign-wrapper max-height">
+    <div class="row center-align">
+        <h4 class="row p-20 grey-text text-darken-1" translate="AUTH.LOGIN.TITLE"></h4>
+        <form ng-submit="$ctrl.login()" class="col s12 card">
+            <div class="login">
+                <div class='row col s12'>
+                    <div class='input-field col s12'>
+                        <input class='validate' type='text' name='username' id='username'/>
+                        <label for='username' translate="AUTH.LOGIN.USERNAME"></label>
+                    </div>
+                </div>
+
+                <div class='row col s12'>
+                    <div class='input-field col s12'>
+                        <input class='validate' type='password' name='password' id='password'/>
+                        <label for='password' translate="AUTH.LOGIN.PASSWORD"></label>
+                    </div>
+                </div>
+                <button type='submit' name='btn_login' class='col row s12 btn btn-large waves-effect red'>Login</button>
+                <div class="row p-20"></div>
+            </div>
+        </form>
+    </div>
 </div>

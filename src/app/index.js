@@ -1,5 +1,6 @@
 import "../assets/sass/materialize.scss";
 import "../assets/sass/exams.scss";
+import "../assets/js/bin/materialize.min"
 
 import angular from "angular";
 import uiRouter from "angular-ui-router";

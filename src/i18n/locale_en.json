@@ -6,5 +6,12 @@
     "SUBJECTS": "Subjects",
     "STATS": "Stats",
     "LOGOUT": "Logout"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "USERNAME": "Enter your username",
+      "PASSWORD": "Enter your password",
+      "TITLE": "Please, login into your account"
+    }
   }
 }
