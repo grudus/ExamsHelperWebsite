@@ -12,7 +12,17 @@
       "USERNAME": "Enter your username",
       "PASSWORD": "Enter your password",
       "TITLE": "Sign in to ExamsHelper",
-      "ERROR": "Invalid username or password"
+      "ERROR": "Invalid username or password",
+      "BUTTON": "Login",
+      "TO_REGISTER": "New to ExamsHelper? Create an account"
+    },
+    "REGISTER": {
+      "TITLE": "Join ExamsHelper",
+      "TO_LOGIN": "Already a member? Sign in!",
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+      "EMAIL": "Email",
+      "BUTTON": "Join now"
     }
   }
 }

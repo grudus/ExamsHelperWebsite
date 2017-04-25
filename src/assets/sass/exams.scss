@@ -28,6 +28,10 @@ body {
   padding: 32px 48px 0 48px;
 }
 
+.register {
+  padding: 32px 48px 0 48px;
+}
+
 .p-b-10 {
   padding-bottom: 10px;
 }
@@ -50,4 +54,18 @@ body {
 
 .text {
   color: #67727A
+}
+
+.a {
+  @extend .pointer;
+  color: #039be5;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.pointer {
+  &:hover {
+    cursor: pointer;
+  }
 }
