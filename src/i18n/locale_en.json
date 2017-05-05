@@ -22,7 +22,12 @@
       "USERNAME": "Username",
       "PASSWORD": "Password",
       "EMAIL": "Email",
-      "BUTTON": "Join now"
+      "BUTTON": "Join now",
+      "ERROR": {
+        "EMAIL_INVALID": "Invalid email",
+        "EMAIL_TAKEN": "Email is already taken",
+        "USERNAME_TAKEN": "Username is already taken"
+      }
     }
   }
 }

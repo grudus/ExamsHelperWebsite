@@ -14,6 +14,7 @@ import ngResource from "angular-resource";
 import Auth from "./auth/auth.index"
 import App from "./panel/app.index"
 import User from "./user/user.index"
+import Utils from "./utils/utils.index"
 
 import Config from "./config"
 
@@ -28,7 +29,8 @@ angular.module("ExamsHelper", [
 
     Auth,
     App,
-    User
+    User,
+    Utils
 ]).config(Config)
     .constant('API', 'http://localhost:8080/api')
     .constant('AUTH_HEADER', 'X-AUTH-TOKEN')
