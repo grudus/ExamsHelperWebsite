@@ -26,8 +26,22 @@
       "ERROR": {
         "EMAIL_INVALID": "Invalid email",
         "EMAIL_TAKEN": "Email is already taken",
-        "USERNAME_TAKEN": "Username is already taken"
+        "USERNAME_TAKEN": "Username is already taken",
+        "USERNAME_EMPTY": "Cannot be empty",
+        "PASSWORD_TOO_SHORT": "Must have at least 6 chars"
       }
+    }
+  },
+  "EXAMS": {
+    "EMPTY": "You haven't got any exams yet!"
+  },
+  "SUBJECTS": {
+    "EMPTY": "You haven't got any subjects yet!"
+  },
+  "MODAL": {
+    "EXAMS": {
+      "TITLE": "Confirmation",
+      "MESSAGE": "To complete your registration, please click the link sent in the confirmation email"
     }
   }
 }

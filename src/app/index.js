@@ -14,6 +14,8 @@ import ngResource from "angular-resource";
 import Auth from "./auth/auth.index"
 import App from "./panel/app.index"
 import User from "./user/user.index"
+import Exams from "./exams/exams.index"
+import Subjects from "./subjects/subjects.index"
 import Utils from "./utils/utils.index"
 
 import Config from "./config"
@@ -30,6 +32,8 @@ angular.module("ExamsHelper", [
     Auth,
     App,
     User,
+    Exams,
+    Subjects,
     Utils
 ]).config(Config)
     .constant('API', 'http://localhost:8080/api')

@@ -2,7 +2,7 @@
     <div class="row center-align col s4">
         <h4 class="row p-20 grey-text text-darken-1" translate="AUTH.REGISTER.TITLE"></h4>
 
-        <form ng-submit="$ctrl.login()" name="form" class="col s12 card">
+        <form ng-submit="$ctrl.register()" name="form" class="col s12 card">
             <div class="register">
                 <div class='row'>
                     <div class='input-field col s12'>
@@ -35,4 +35,5 @@
         </form>
         <p translate="AUTH.REGISTER.TO_LOGIN" class="a" ui-sref="auth.login"></p>
     </div>
+    <modal show="$ctrl.modalShown" message="{{'MODAL.EXAMS.MESSAGE' | translate}}" submit="$ctrl.dupa()" title="{{'MODAL.EXAMS.TITLE' | translate}}"></modal>
 </div>

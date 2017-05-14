@@ -1,0 +1,9 @@
+<div>
+    <h3 class="center-align m-t-100 grey-text text-darken-3" ng-show="!$ctrl.subjects" translate="SUBJECTS.EMPTY"></h3>
+    <div ng-show="$ctrl.subjects" class="row">
+        <ul ng-repeat="subject in $ctrl.subjects" class="row">
+            <li><div class="col s2 m2 border">{{subject}}</div></li>
+        </ul>
+    </div>
+
+</div>
