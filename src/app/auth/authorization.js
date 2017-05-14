@@ -56,4 +56,8 @@ export default class Authorization {
             this.$state.go("app.user");
         }, (error) => errorCallback())
     }
+
+    register(user) {
+        return this.AuthService.register({redirect_uri: window.location.host}, user).$promise
+    }
 }

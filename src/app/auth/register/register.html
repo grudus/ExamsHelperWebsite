@@ -35,5 +35,5 @@
         </form>
         <p translate="AUTH.REGISTER.TO_LOGIN" class="a" ui-sref="auth.login"></p>
     </div>
-    <modal show="$ctrl.modalShown" message="{{'MODAL.EXAMS.MESSAGE' | translate}}" submit="$ctrl.dupa()" title="{{'MODAL.EXAMS.TITLE' | translate}}"></modal>
+    <modal show="$ctrl.modalShown" message="{{'MODAL.EXAMS.MESSAGE' | translate}}" on-submit="$ctrl.goToTheLoginPage()" title="{{'MODAL.EXAMS.TITLE' | translate}}"></modal>
 </div>

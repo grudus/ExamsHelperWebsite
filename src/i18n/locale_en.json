@@ -43,5 +43,9 @@
       "TITLE": "Confirmation",
       "MESSAGE": "To complete your registration, please click the link sent in the confirmation email"
     }
+  },
+  "ERROR": {
+    "UNEXPECTED": "An unexpected error occurs. Please, go to the ",
+    "UNEXPECTED_LINK": "login page"
   }
 }

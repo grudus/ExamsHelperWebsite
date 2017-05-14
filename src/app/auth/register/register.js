@@ -18,12 +18,18 @@ class Register {
     }
 
     register() {
-        this.modalShown = true;
+        this.Authorization.register({username: this.username, password: this.password, email: this.email})
+            .then(res => {
+                this.modalShown = true;
+            }, error => {
+                this.$state.go('error')
+            })
     }
 
-    dupa() {
-        window.console.log("dupa");
+    goToTheLoginPage() {
+        this.$state.go('auth.login');
     }
+
 
 }
 
