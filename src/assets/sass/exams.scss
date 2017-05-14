@@ -114,3 +114,43 @@ h3 {
   background-color: #fff;
   box-shadow: 2px 2px 20px #333;
 }
+
+.m-10 {
+  margin: 10px;
+}
+
+.h-5 {
+  height: 2px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.circle {
+  border-radius: 100%;
+}
+
+.size-64 {
+  width: 64px;
+  height: 64px;
+}
+
+.line-64 {
+  line-height: 64px;
+}
+
+.b-20 {
+  bottom: 20px;
+}
+
+.always-center {
+  position: fixed;
+  left: 50%;
+  margin-left: -27px;
+  transition: transform .1s ease-in-out;
+}
+
+.rotate:hover {
+  transform: rotate(90deg);
+}
