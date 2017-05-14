@@ -20,8 +20,10 @@
         </ul>
     </div>
 
-    <a id='fat' class="size-64 btn-floating btn-large waves-effect waves-light red always-center b-20 rotate">
+    <a id='fat' class="size-64 btn-floating btn-large waves-effect waves-light red always-center b-20 rotate" ng-click="$ctrl.showModal = true">
         <i class="material-icons">add</i>
     </a>
+
+    <new-subject ng-show="$ctrl.showModal" hide="$ctrl.showModal = false"></new-subject>
 
 </div>
