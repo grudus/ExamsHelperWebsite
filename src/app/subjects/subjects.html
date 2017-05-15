@@ -24,6 +24,6 @@
         <i class="material-icons">add</i>
     </a>
 
-    <new-subject ng-show="$ctrl.showModal" hide="$ctrl.showModal = false"></new-subject>
+    <new-subject ng-show="$ctrl.showModal" on-cancel="$ctrl.showModal = false" on-submit="$ctrl.addNewSubject(subject)"></new-subject>
 
 </div>

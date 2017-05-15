@@ -180,6 +180,14 @@ h3 {
   margin-bottom: 20px;
 }
 
-p > .p-disabled {
-  color: gray !important;
+.p-disabled {
+  &:hover {
+    cursor: default;
+  }
+}
+
+.p-enabled {
+  &:hover {
+    cursor: pointer;
+  }
 }

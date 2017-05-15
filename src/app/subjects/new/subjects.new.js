@@ -15,6 +15,13 @@ class NewSubject {
         this.colorIndex = index;
     }
 
+    onOk() {
+        if (this.validSubject()) {
+            this.onSubmit({subject: this.subject});
+            this.onCancel()
+        }
+    }
+
     validSubject() {
         return this.subject !== undefined
         && this.subject.label !== undefined
@@ -27,6 +34,7 @@ export default {
     controller: NewSubject,
     templateUrl: 'subjects.new.html',
     bindings: {
-        hide: '&',
+        onCancel: '&',
+        onSubmit: '&'
     }
 }

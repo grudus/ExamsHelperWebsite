@@ -11,8 +11,12 @@ class Subjects {
             window.console.table(res);
             this.subjects = res;
         })
+    }
 
-
+    addNewSubject(subject) {
+        this.SubjectsService.add({}, subject, () => {
+            this.subjects.push(subject)
+        });
     }
 }
 

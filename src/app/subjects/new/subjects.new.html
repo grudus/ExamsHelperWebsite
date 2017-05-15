@@ -1,13 +1,12 @@
 <div class='ng-modal grey-text text-darken-3'>
-    <div class='ng-modal-overlay row' ng-click='$ctrl.hide()'></div>
+    <div class='ng-modal-overlay row' ng-click='$ctrl.onCancel()'></div>
     <div class='ng-modal-dialog row col s4 offset-s4'>
         <div class="p-20">
             <h5 class="header center-align" translate="SUBJECTS.NEW.TITLE"></h5>
 
             <div class='row'>
                 <div class='input-field col s12'>
-                    <input class='validate' type='text' name='label' id='label' ng-model="$ctrl.subject.label" required
-                           input-taken checking-existence="$ctrl.usernameExists(value)" error="$ctrl.usernameError"/>
+                    <input class='validate' type='text' name='label' id='label' ng-model="$ctrl.subject.label" required/>
                     <label for='label' translate="SUBJECTS.NEW.INPUT_LABEL"></label>
                 </div>
             </div>
@@ -27,11 +26,11 @@
             </ul>
 
             <div class="m-b-30">
-                <p class="p-20 waves-effect waves-light right bold p-1-2 green-text text-darken-2"
-                   ng-click="$ctrl.hide()" translate="SUBJECTS.NEW.BUTTON.SUBMIT"></p>
+                <p class="p-20 right bold p-1-2" ng-class="$ctrl.subject.label ? 'green-text text-darken-2 p-enabled' : 'grey-text p-disabled'"
+                   ng-click="$ctrl.onOk()" translate="SUBJECTS.NEW.BUTTON.SUBMIT"></p>
 
-                <p class=" p-20 waves-effect waves-light right bold p-1-2 red-text text-darken-2"
-                   ng-click="$ctrl.hide()" translate="SUBJECTS.NEW.BUTTON.CANCEL"></p>
+                <p class=" p-20 right bold p-1-2 red-text text-darken-2 p-enabled"
+                   ng-click="$ctrl.onCancel()" translate="SUBJECTS.NEW.BUTTON.CANCEL"></p>
             </div>
 
         </div>
