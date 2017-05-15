@@ -36,7 +36,16 @@
     "EMPTY": "You haven't got any exams yet!"
   },
   "SUBJECTS": {
-    "EMPTY": "You haven't got any subjects yet!"
+    "EMPTY": "You haven't got any subjects yet!",
+    "NEW": {
+      "TITLE": "Add new subject",
+      "INPUT_LABEL": "Label",
+      "COLOR": "Choose color",
+      "BUTTON": {
+        "SUBMIT": "ADD",
+        "CANCEL": "CANCEL"
+      }
+    }
   },
   "MODAL": {
     "EXAMS": {
