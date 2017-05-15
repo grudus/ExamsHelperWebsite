@@ -2,13 +2,14 @@ require('./subjects.html')
 
 class Subjects {
     /*@ngInject */
-    constructor(SubjectsService) {
+    constructor(SubjectsService, $state, $stateParams) {
         this.SubjectsService = SubjectsService;
-        this.dupa = 'gafaagag';
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+
         this.showModal = false;
 
         SubjectsService.query().$promise.then(res => {
-            window.console.table(res);
             this.subjects = res;
         })
     }
@@ -17,6 +18,10 @@ class Subjects {
         this.SubjectsService.add({}, subject, () => {
             this.subjects.push(subject)
         });
+    }
+
+    details(subject) {
+        this.$state.go('app.subjects.details', {label: subject.label, subject: subject})
     }
 }
 

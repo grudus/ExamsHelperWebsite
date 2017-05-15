@@ -1,5 +1,6 @@
 /*@ngInject*/
-export default ($resource, API) => $resource(API + '/subjects/:resource', {}, {
+export default ($resource, API) => $resource(API + '/subjects/:resource/:label', {}, {
     exists: {method: 'GET', params: {resource: 'exists'}},
-    add: {method: 'POST'}
+    add: {method: 'POST'},
+    details: {method: 'GET', params: {resource: '@label'}}
 });

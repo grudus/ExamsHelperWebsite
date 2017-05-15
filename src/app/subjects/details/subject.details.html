@@ -1,0 +1,16 @@
+<div class="row m-t-30">
+    <div class="col s4 offset-s4">
+        <div class="center-block bor-rad" ng-style="{'background': $ctrl.subject.color}">
+            <div class="p-h-50">
+                <h3 class="light center-align white-text text-darken-1">{{$ctrl.subject.label}}</h3>
+            </div>
+        </div>
+
+        <div class='row m-t-30'>
+            <div class='input-field col s12'>
+                <input class='validate' type='text' name='label' id='label' ng-model="$ctrl.subject.label" required/>
+                <label for='label' translate="SUBJECTS.NEW.INPUT_LABEL" autofocus></label>
+            </div>
+        </div>
+    </div>
+</div>

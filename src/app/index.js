@@ -18,6 +18,7 @@ import Exams from "./exams/exams.index"
 import Subjects from "./subjects/subjects.index"
 import Utils from "./utils/utils.index"
 import Error from "./error/error.index"
+import Colors from "./colors/colors.index"
 
 import Config from "./config"
 
@@ -36,6 +37,7 @@ angular.module("ExamsHelper", [
     Exams,
     Subjects,
     Error,
+    Colors,
     Utils
 ]).config(Config)
     .constant('API', 'http://localhost:8080/api')
