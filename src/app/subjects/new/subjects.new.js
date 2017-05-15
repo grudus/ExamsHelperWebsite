@@ -9,9 +9,8 @@ class NewSubject {
         this.subject = {color: this.colors[this.colorIndex]};
     }
 
-    selectColor(index) {
-        this.subject.color = this.colors[index];
-        this.colorIndex = index;
+    changeColor(color) {
+        this.subject.color = color;
     }
 
     onOk() {

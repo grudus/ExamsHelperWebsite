@@ -10,6 +10,10 @@ class SubjectDetails {
         this.colors = ColorsService.getColors();
 
     }
+
+    changeColor(color) {
+        this.subject.color = color;
+    }
 }
 
 export default {

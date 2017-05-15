@@ -6,19 +6,7 @@
 
             <text-input label="{{'SUBJECTS.NEW.INPUT_LABEL' | translate}}" model="$ctrl.subject.label"></text-input>
 
-            <div>
-                <h5 class="center-align m-b-20 light" translate="SUBJECTS.NEW.COLOR"></h5>
-            </div>
-
-            <ul class="row p-20">
-                <li ng-repeat="color in $ctrl.colors">
-                    <div class="col s3 m-b-10">
-                        <div class="circle size-64 center-block pointer" ng-style="{'background': color}"
-                             ng-class="$ctrl.colorIndex == $index ? 'selected-color' : ''"
-                             ng-click="$ctrl.selectColor($index)"></div>
-                    </div>
-                </li>
-            </ul>
+            <color-choice on-change="$ctrl.changeColor(color)"></color-choice>
 
             <div class="m-b-30">
                 <p class="p-20 right bold p-1-2" ng-class="$ctrl.subject.label ? 'green-text text-darken-2 p-enabled' : 'grey-text p-disabled'"
