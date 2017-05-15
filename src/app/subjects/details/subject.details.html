@@ -6,11 +6,6 @@
             </div>
         </div>
 
-        <div class='row m-t-30'>
-            <div class='input-field col s12'>
-                <input class='validate' type='text' name='label' id='label' ng-model="$ctrl.subject.label" required/>
-                <label for='label' translate="SUBJECTS.NEW.INPUT_LABEL" autofocus></label>
-            </div>
-        </div>
+       <text-input label="{{'SUBJECTS.NEW.INPUT_LABEL' | translate}}" model="$ctrl.subject.label"></text-input>
     </div>
 </div>
