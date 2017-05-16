@@ -3,12 +3,20 @@ require('./subject.details.html');
 class SubjectDetails {
     /*@ngInject*/
     constructor(ColorsService, $stateParams, SubjectsService) {
-        if (!$stateParams.subject) {
+        this.SubjectService = SubjectsService;
+
+        if (!$stateParams.subject || !$stateParams.subject.id) {
             SubjectsService.details({label: $stateParams.label}).$promise
                 .then(sub => this.subject = sub)
         } else this.subject = $stateParams.subject;
         this.colors = ColorsService.getColors();
 
+
+    }
+
+    update() {
+        this.SubjectService.update({}, this.subject, () => window.console.log("succcess"),
+            (err) => window.console.log(err))
     }
 
     changeColor(color) {

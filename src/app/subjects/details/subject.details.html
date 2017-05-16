@@ -10,9 +10,9 @@
 
         <color-choice on-change="$ctrl.changeColor(color)" color="$ctrl.subject.color"></color-choice>
 
-        <button class="btn btn-large waves-effect waves-light m-t-30 right" type="submit" name="action"
-                ng-click="onSubmitAction()">
-            OK
+        <button class="btn btn-large waves-effect waves-light right" type="submit" name="action"
+                ng-click="$ctrl.update()">
+            APPLY
         </button>
     </div>
 </div>
