@@ -8,6 +8,11 @@
 
        <div text-input class="m-t-30" label="{{'SUBJECTS.NEW.INPUT_LABEL' | translate}}" model="$ctrl.subject.label"></div>
 
-        <color-choice on-change="$ctrl.changeColor(color)"></color-choice>
+        <color-choice on-change="$ctrl.changeColor(color)" color="$ctrl.subject.color"></color-choice>
+
+        <button class="btn btn-large waves-effect waves-light m-t-30 right" type="submit" name="action"
+                ng-click="onSubmitAction()">
+            OK
+        </button>
     </div>
 </div>

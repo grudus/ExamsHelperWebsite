@@ -4,7 +4,11 @@ class ColorsChoice {
     /*@ngInject*/
     constructor(ColorsService) {
         this.colors = ColorsService.getColors();
-        this.colorIndex = 0;
+
+    }
+
+    $onInit() {
+        this.colorIndex = this.color ? this.colors.indexOf(this.color) : 0;
     }
 
     selectColor(index) {
@@ -17,6 +21,7 @@ export default {
     templateUrl: "colors.choice.html",
     controller: ColorsChoice,
     bindings: {
-        onChange: '&'
+        onChange: '&',
+        color: '='
     }
 }

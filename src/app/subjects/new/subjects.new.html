@@ -8,11 +8,11 @@
 
             <color-choice on-change="$ctrl.changeColor(color)"></color-choice>
 
-            <div class="m-b-30">
-                <p class="p-20 right bold p-1-2" ng-class="$ctrl.subject.label ? 'green-text text-darken-2 p-enabled' : 'grey-text p-disabled'"
+            <div class="m-b-30 p-b-10">
+                <p class="waves-effect waves-teal btn-flat right bold p-1-2 green-text text-darken-2" ng-class="$ctrl.subject.label ? '' : 'disabled'"
                    ng-click="$ctrl.onOk()" translate="SUBJECTS.NEW.BUTTON.SUBMIT"></p>
 
-                <p class=" p-20 right bold p-1-2 red-text text-darken-2 p-enabled"
+                <p class="waves-effect waves-teal btn-flat right bold p-1-2 red-text text-darken-2 p-enabled"
                    ng-click="$ctrl.onCancel()" translate="SUBJECTS.NEW.BUTTON.CANCEL"></p>
             </div>
 
