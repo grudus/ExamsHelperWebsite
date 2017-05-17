@@ -6,7 +6,7 @@ class NewSubject {
     constructor(ColorsService) {
         this.colors = ColorsService.getColors();
         this.colorIndex = 0;
-        this.subject = {color: this.colors[this.colorIndex]};
+        this.subject = {};
     }
 
     changeColor(color) {
@@ -16,7 +16,8 @@ class NewSubject {
     onOk() {
         if (this.validSubject()) {
             this.onSubmit({subject: this.subject});
-            this.onCancel()
+            this.onCancel();
+            this.subject = {};
         }
     }
 
