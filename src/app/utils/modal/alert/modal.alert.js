@@ -1,8 +1,8 @@
-require('./modal.html')
+require('./modal.alert.html')
 /*@ngInject*/
 export default ($q, $document) => ({
     restrict: "EA",
-    templateUrl: "modal.html",
+    templateUrl: "modal.alert.html",
     scope: {
         show: '=',
         message: "@",

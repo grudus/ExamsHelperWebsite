@@ -6,6 +6,10 @@ class Subjects {
         this.SubjectsService = SubjectsService;
         this.$state = $state;
         this.$stateParams = $stateParams;
+        window.console.log("suybjects constructor");
+        if ($stateParams.deletedLabel) {
+            this.subjects = this.subjects.filter(sub => sub.label !== $stateParams.deletedLabel);
+        }
 
         this.showModal = false;
 
@@ -18,6 +22,10 @@ class Subjects {
         this.SubjectsService.add({}, subject, () => {
             this.subjects.push(subject)
         });
+    }
+
+    onDelete(subject) {
+        this.subjects = this.subjects.filter(sub => sub.id !== subject.id);
     }
 
     details(subject) {

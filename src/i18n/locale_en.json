@@ -1,7 +1,8 @@
 {
   "TITLE": "ExamsHelper",
   "BUTTON": {
-    "APPLY": "Apply"
+    "APPLY": "Apply",
+    "DELETE": "Delete "
   },
   "MENU": {
     "PROFILE": "Profile",

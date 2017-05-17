@@ -1,0 +1,22 @@
+<div class='ng-modal grey-text text-darken-3' ng-show='show'>
+    <div class='ng-modal-overlay' ng-click='hideModal()'></div>
+    <div class='ng-modal-dialog p-20'>
+        <div class=" p-b-10">
+            <h4 class="left-align">{{title}}</h4>
+        </div>
+
+        <div><p class="left-align p-1-1">{{message}}</p></div>
+
+
+        <a class="btn waves-effect waves-light m-t-30 right" type="submit" name="action"
+                ng-click="onSubmitAction()">
+            OK
+        </a>
+
+        <a class="btn waves-effect waves-light m-t-30 right m-r-5 red" type="submit" name="action"
+           ng-click="onCancelAction()">
+            CANCEL
+        </a>
+
+    </div>
+</div>

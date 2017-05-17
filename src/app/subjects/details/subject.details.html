@@ -10,8 +10,15 @@
 
         <color-choice on-change="$ctrl.changeColor(color)" color="$ctrl.subject.color"></color-choice>
 
-        <button class="btn btn-large waves-effect waves-light right" type="submit" name="action"
-                ng-click="$ctrl.update()" translate="BUTTON.APPLY">
-        </button>
+        <a class="btn btn-large waves-effect waves-light right" type="submit" name="action"
+                ng-click="$ctrl.update()" > {{'BUTTON.APPLY' | translate}}
+            <i class="material-icons right">send</i>
+        </a>
+        <a class="btn red btn-large waves-effect waves-light right m-r-5" type="submit" name="action" ng-click="$ctrl.modalShown = true">
+            {{'BUTTON.DELETE' | translate}}
+            <i class="material-icons right">delete</i>
+        </a>
     </div>
+
+    <modal-confirmation show="$ctrl.modalShown" message="{{'MODAL.EXAMS.MESSAGE' | translate}}" on-submit="$ctrl.deleteSubject()" title="{{'MODAL.EXAMS.TITLE' | translate}}"></modal-confirmation>
 </div>
