@@ -49,6 +49,12 @@
         "SUBMIT": "ADD",
         "CANCEL": "CANCEL"
       }
+    },
+    "DETAILS": {
+      "DELETE": {
+        "TITLE": "Delete subject",
+        "MESSAGE": "Are you sure? You will lose all your exams and statistics!"
+      }
     }
   },
   "MODAL": {

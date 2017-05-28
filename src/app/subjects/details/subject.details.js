@@ -8,20 +8,25 @@ class SubjectDetails {
 
         if (!$stateParams.subject || !$stateParams.subject.id) {
             SubjectsService.details({label: $stateParams.label}).$promise
-                .then(sub => this.subject = sub)
+                .then(sub => this.subject = sub, err => {
+                    $state.go('error')
+                })
         } else this.subject = $stateParams.subject;
         this.colors = ColorsService.getColors();
     }
 
     deleteSubject() {
         this.SubjectService.delete({}, {id: this.subject.id}, () => {
-            this.$state.go("app.subjects", {deletedLabel: this.subject.label});
+            this.$state.go("app.subjects", {deletedLabel: this.subject.label}, {reload: "app.subjects"})
         })
     }
 
     update() {
-        this.SubjectService.update({}, this.subject, () => window.console.log("succcess"),
-            (err) => window.console.log(err))
+        this.SubjectService.update({}, this.subject, () => {
+                this.$state.go("app.subjects", {}, {reload: "app.subjects"})
+            },
+            (err) => window.console.log(err)
+        )
     }
 
     changeColor(color) {
@@ -35,5 +40,5 @@ class SubjectDetails {
 
 export default {
     controller: SubjectDetails,
-    templateUrl: 'subject.details.html'
+    templateUrl: 'subject.details.html',
 }
