@@ -1,8 +1,6 @@
 export default class Authorization {
     /*@ngInject*/
     constructor(AUTH_HEADER, $window, AuthService, $state, $http, $stateParams, $q, $timeout) {
-        window.console.log("AAuthA constructor");
-        this.$stateParams = $stateParams;
         this.header = AUTH_HEADER;
         this.$localStorage = $window.localStorage;
         this.AuthService = AuthService;
@@ -14,9 +12,7 @@ export default class Authorization {
 
 
     checkUserAccess($state) {
-        window.console.log("Checking user's access");
         if (!this.isOnline()) {
-            console.log("Is not online!");
             window.console.log(this.$state.current.name);
             this.$timeout(function () {
                 $state.go('auth.login')

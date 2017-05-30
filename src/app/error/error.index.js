@@ -1,6 +1,6 @@
-import error from './error'
+import error from "./error";
 
-export default angular.module('ExamsHelper.Exams', [])
+export default angular.module('ExamsHelper.Error', [])
     .component('error', error)
     .config( ($stateProvider) => {
         $stateProvider.state("error", {
