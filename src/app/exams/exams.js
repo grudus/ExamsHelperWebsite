@@ -10,7 +10,10 @@ class Exams {
 
     convertToMap(exams) {
         this.examsPerDay = exams;
+    }
 
+    dupa() {
+        console.log('dipa')
     }
 }
 

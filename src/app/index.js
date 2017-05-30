@@ -1,6 +1,6 @@
-import "../assets/sass/exams.scss"
-import "materialize-css/sass/materialize.scss"
-import "materialize-css/js/materialize"
+import "../assets/sass/exams.scss";
+import "materialize-css/sass/materialize.scss";
+import "materialize-css/dist/js/materialize";
 
 import angular from "angular";
 import uiRouter from "angular-ui-router";
@@ -11,16 +11,16 @@ import translateLoader from "angular-translate-loader-static-files";
 import angularCookies from "angular-cookies";
 import ngResource from "angular-resource";
 
-import Auth from "./auth/auth.index"
-import App from "./panel/app.index"
-import User from "./user/user.index"
-import Exams from "./exams/exams.index"
-import Subjects from "./subjects/subjects.index"
-import Utils from "./utils/utils.index"
-import Error from "./error/error.index"
-import Colors from "./colors/colors.index"
+import Auth from "./auth/auth.index";
+import App from "./panel/app.index";
+import User from "./user/user.index";
+import Exams from "./exams/exams.index";
+import Subjects from "./subjects/subjects.index";
+import Utils from "./utils/utils.index";
+import Error from "./error/error.index";
+import Colors from "./colors/colors.index";
 
-import Config from "./config"
+import Config from "./config";
 
 angular.module("ExamsHelper", [
     uiRouter,

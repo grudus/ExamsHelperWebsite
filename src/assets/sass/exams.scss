@@ -9,6 +9,27 @@
 $background: #ededed;
 $primary: #689f38;
 
+@keyframes pulse {
+  0% {
+    transform: scale(1.1, 1.1);
+  }
+  20% {
+    transform: scale(0.9, 0.9);
+  }
+  40% {
+    transform: scale(1.1, 1.1);
+  }
+  60% {
+    transform: scale(0.9, 0.9);
+  }
+  80% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 body {
   background: $background;
 }
@@ -163,14 +184,19 @@ h3 {
 }
 
 .always-center {
-  position: fixed;
+  position: fixed !important;
   left: 50%;
   margin-left: -27px;
+}
+
+.pulse-on-hover {
   transition: transform .1s ease-in-out;
 }
 
-.rotate:hover {
-  transform: rotate(90deg);
+.pulse-on-hover:hover {
+  animation: pulse;
+  animation-duration:  0.5s;
+  transition: transform .1s ease-in-out;
 }
 
 .m-b-30 {
@@ -202,7 +228,7 @@ h3 {
 }
 
 .p-h-50 {
-  padding: 50px 0 ;
+  padding: 50px 0;
 }
 
 .m-l-25 {
