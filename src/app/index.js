@@ -1,4 +1,4 @@
-import "../assets/sass/exams.scss";
+import "../assets/sass/examshelper.main.scss";
 import "materialize-css/sass/materialize.scss";
 import "materialize-css/dist/js/materialize";
 import "ui-select/dist/select.css";

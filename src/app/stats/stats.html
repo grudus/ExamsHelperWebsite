@@ -1,12 +1,13 @@
 <div class="row">
     <div class="col s4 offset-s4">
         <span>Selected: {name: {{$ctrl.selectedItem.name}}, id: {{$ctrl.selectedItem.id}} }</span>
+
         <ui-select ng-model="$ctrl.selectedItem">
             <ui-select-match>
                 <span ng-bind="$select.selected.name"></span>
             </ui-select-match>
             <ui-select-choices repeat="item in ($ctrl.itemArray | filter: $select.search) track by item.id">
-                <span ng-bind="item.name"></span>
+                <div>{{item.name + 'dupa'}} <div style="width: 10px; height: 10px; background: red"></div> </div>
             </ui-select-choices>
         </ui-select>
     </div>

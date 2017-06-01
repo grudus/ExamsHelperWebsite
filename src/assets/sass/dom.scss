@@ -1,0 +1,27 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+$background: #ededed;
+$primary: #689f38;
+
+
+div {
+  .selectize-input {
+    padding: 20px;
+  }
+}
+
+body {
+  background: $background;
+}
+
+
+h3 {
+  font-weight: 300;
+}
