@@ -26,7 +26,10 @@
     "angular-translate-storage-local": "^2.12.1",
     "angular-cookies": "1.6.3",
     "angular-resource": "^1.6.4",
-    "materialize-css": "^0.98.2"
+    "materialize-css": "^0.98.2",
+    "angular-sanitize": "^1.6.4",
+    "ui-select": "^0.19.8",
+    "selectize": "^0.12.4"
   },
 
   "devDependencies": {

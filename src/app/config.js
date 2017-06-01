@@ -17,7 +17,8 @@ export default ($stateProvider, $urlRouterProvider, $httpProvider, $locationProv
                 component: "app",
                 resolve: {
                     access: (Authorization, $state) =>
-                        Authorization.checkUserAccess($state)
+                        Authorization.checkUserAccess($state),
+                    uiSelectStart: (uiSelectConfig) => uiSelectConfig.theme = 'selectize'
                 }
             }
         )
