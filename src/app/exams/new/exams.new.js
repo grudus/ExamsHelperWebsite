@@ -3,8 +3,12 @@ require('./exams.new.html');
 class NewExam {
 
     /*@ngInject*/
-    constructor() {
-        console.log('New Exam constructor')
+    constructor(SubjectsService) {
+        SubjectsService.query().$promise.then(res => {
+            this.subjects = res;
+            this.exam = {subject: this.subjects[0]};
+        });
+
     }
 
     onOk() {

@@ -1,11 +1,26 @@
 .input-h-1 {
   input[type=search] {
     height: inherit;
+    border:none;
+    background:transparent;
   }
 }
 
 div {
   .selectize-input {
     padding: 20px;
+    background: transparent;
+    font-size: 2.0em;
+    color: white;
+
+    input {
+      color: white;
+    }
+  }
+
+  .selectize-dropdown {
+    .active {
+      background: #e2e2e2;
+    }
   }
 }
