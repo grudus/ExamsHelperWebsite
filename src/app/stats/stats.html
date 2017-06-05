@@ -2,12 +2,12 @@
     <div class="col s4 offset-s4">
         <span>Selected: {name: {{$ctrl.selectedItem.name}}, id: {{$ctrl.selectedItem.id}} }</span>
 
-        <ui-select ng-model="$ctrl.selectedItem">
+        <ui-select ng-model="$ctrl.selectedItem" class="input-h-1">
             <ui-select-match>
                 <span ng-bind="$select.selected.name"></span>
             </ui-select-match>
             <ui-select-choices repeat="item in ($ctrl.itemArray | filter: $select.search) track by item.id">
-                <div>{{item.name + 'dupa'}} <div style="width: 10px; height: 10px; background: red"></div> </div>
+                <div>{{item.name}}</div>
             </ui-select-choices>
         </ui-select>
     </div>

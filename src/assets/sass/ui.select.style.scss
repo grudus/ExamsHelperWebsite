@@ -1,3 +1,11 @@
-.ui-select-choices-row {
-  padding: 20px;
+.input-h-1 {
+  input[type=search] {
+    height: inherit;
+  }
+}
+
+div {
+  .selectize-input {
+    padding: 20px;
+  }
 }
