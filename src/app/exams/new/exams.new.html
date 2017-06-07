@@ -5,16 +5,8 @@
         <div class="p-80-20" ng-style="{'background': $ctrl.exam.subject.color}">
 
             <div class="m-t-30">
-                <ui-select ng-model="$ctrl.exam.subject" class="input-h-1 white-text darken-2"
-                            style="text-align: center">
-                    <ui-select-match style="text-align: center"
-                                     placeholder="{{'EXAMS.NEW.SUBJECT_PLACEHOLDER' | translate}}">
-                        {{$select.selected.label}}
-                    </ui-select-match>
-                    <ui-select-choices repeat="subject in ($ctrl.subjects | filter: $select.search) track by subject.id">
-                        <div class="p-20 p-1-1">{{subject.label}}</div>
-                    </ui-select-choices>
-                </ui-select>
+                <dropdown selected="$ctrl.exam.subject" items="$ctrl.subjects" label="'label'"
+                          placeholder="'EXAMS.NEW.SUBJECT_PLACEHOLDER' | translate"></dropdown>
             </div>
         </div>
 

@@ -11,8 +11,6 @@ class Stats {
                 this.date = val;
                 console.log(val.format("DD/MM/YYYY"))
             })
-            .on('open', () => console.log('opened'))
-            .on('close', () => console.log('closed'));
     }
 
     openCalendar() {

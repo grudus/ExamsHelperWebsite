@@ -1,0 +1,10 @@
+<ui-select ng-model="$ctrl.selected" class="input-h-1 white-text darken-2"
+           style="text-align: center">
+    <ui-select-match style="text-align: center"
+                     placeholder="{{$ctrl.placeholder}}">
+        {{$select.selected[$ctrl.label]}}
+    </ui-select-match>
+    <ui-select-choices repeat="item in ($ctrl.items | filter: $select.search) track by item.id">
+        <div class="p-20 p-1-1">{{item[$ctrl.label]}}</div>
+    </ui-select-choices>
+</ui-select>
