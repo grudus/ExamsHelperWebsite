@@ -6,6 +6,7 @@
 .c-datepicker {
   width: 350px !important;
   min-height: 650px !important;
+  z-index: 10001;
 }
 
 .c-datepicker__day-body {

@@ -4,6 +4,7 @@ import ConfirmationModal from "./modal/confirmation/modal.confirmation";
 import TextInput from "./input/input.text";
 import FloatingActionButton from "./fab/fab";
 import Dropdown from "./dropdown/dropdown";
+import DatePicker from "./datepicker/datepicker";
 
 export default angular.module('ExamsHelper.Utils', [])
     .directive("inputTaken", InputTaken)
@@ -12,4 +13,5 @@ export default angular.module('ExamsHelper.Utils', [])
     .directive('textInput', TextInput)
     .directive('fab', FloatingActionButton)
     .component('dropdown', Dropdown)
+    .component('datepicker', DatePicker)
     .name;
