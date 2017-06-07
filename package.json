@@ -16,22 +16,22 @@
     "url": "https://github.com/grudus/ExamsHelperWebsite/issues"
   },
   "homepage": "https://github.com/grudus/ExamsHelperWebsite#readme",
-
   "dependencies": {
     "angular": "^1.6.4",
-    "angular-ui-router": "1.0.0-rc.1",
+    "angular-cookies": "1.6.3",
+    "angular-resource": "^1.6.4",
+    "angular-sanitize": "^1.6.4",
     "angular-translate": "^2.15.1",
     "angular-translate-loader-static-files": "^2.12.1",
     "angular-translate-storage-cookie": "^2.12.1",
     "angular-translate-storage-local": "^2.12.1",
-    "angular-cookies": "1.6.3",
-    "angular-resource": "^1.6.4",
+    "angular-ui-router": "1.0.0-rc.1",
+    "material-datetime-picker": "^2.4.0",
     "materialize-css": "^0.98.2",
-    "angular-sanitize": "^1.6.4",
-    "ui-select": "^0.19.8",
-    "selectize": "^0.12.4"
+    "moment": "^2.18.1",
+    "selectize": "^0.12.4",
+    "ui-select": "^0.19.8"
   },
-
   "devDependencies": {
     "webpack": "^2.2.1",
     "webpack-dev-server": "^1.15.2",

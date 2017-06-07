@@ -1,14 +1,4 @@
 <div class="row">
-    <div class="col s4 offset-s4">
-        <span>Selected: {name: {{$ctrl.selectedItem.name}}, id: {{$ctrl.selectedItem.id}} }</span>
-
-        <ui-select ng-model="$ctrl.selectedItem" class="input-h-1" class="p-1-2 white-text">
-            <ui-select-match class="p-1-2 white-text">
-                <span ng-bind="$select.selected.name" class="p-1-2 white-text"></span>
-            </ui-select-match>
-            <ui-select-choices repeat="item in ($ctrl.itemArray | filter: $select.search) track by item.id">
-                <div class="p-1-2">{{item.name}}</div>
-            </ui-select-choices>
-        </ui-select>
-    </div>
+    <div>Dupa</div>
+    <div id="calendar" style="width: 30px; height: 30px; background: blue" ng-click="$ctrl.openCalendar()">X</div>
 </div>

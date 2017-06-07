@@ -1,16 +1,22 @@
 require('./stats.html')
+import DateTimePicker from "material-datetime-picker";
+
 
 class Stats {
+    /*@ngInject*/
     constructor() {
-        this.itemArray = [
-            {id: 1, name: 'first'},
-            {id: 2, name: 'second'},
-            {id: 3, name: 'third'},
-            {id: 4, name: 'fourth'},
-            {id: 5, name: 'fifth'},
-        ];
+        this.date = new Date();
+        this.dateTimePicker = new DateTimePicker({format: 'xxxxx',  default: this.date })
+            .on('submit', (val) => {
+                this.date = val;
+                console.log(val.format("DD/MM/YYYY"))
+            })
+            .on('open', () => console.log('opened'))
+            .on('close', () => console.log('closed'));
+    }
 
-        this.selectedItem = this.itemArray[0];
+    openCalendar() {
+        this.dateTimePicker.open();
     }
 }
 

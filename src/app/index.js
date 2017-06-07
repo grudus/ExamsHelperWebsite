@@ -3,6 +3,8 @@ import "materialize-css/sass/materialize.scss";
 import "materialize-css/dist/js/materialize";
 import "ui-select/dist/select.css";
 import "selectize/dist/css/selectize.css";
+import "material-datetime-picker";
+import "material-datetime-picker/dist/material-datetime-picker.css";
 
 import angular from "angular";
 import uiRouter from "angular-ui-router";
