@@ -16,6 +16,7 @@ import angularCookies from "angular-cookies";
 import ngResource from "angular-resource";
 import ngSanitize from "angular-sanitize";
 import uiSelect from "ui-select";
+import angularMoment from "angular-moment";
 
 import Auth from "./auth/auth.index";
 import App from "./panel/app.index";
@@ -39,6 +40,7 @@ angular.module("ExamsHelper", [
     ngResource,
     ngSanitize,
     uiSelect,
+    angularMoment,
 
     Auth,
     App,

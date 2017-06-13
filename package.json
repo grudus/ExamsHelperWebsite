@@ -19,6 +19,7 @@
   "dependencies": {
     "angular": "^1.6.4",
     "angular-cookies": "1.6.3",
+    "angular-moment": "^1.0.1",
     "angular-resource": "^1.6.4",
     "angular-sanitize": "^1.6.4",
     "angular-translate": "^2.15.1",

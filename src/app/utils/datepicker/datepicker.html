@@ -1,4 +1,3 @@
 <div class='row'>
-    <text-input ng-click="$ctrl.open($event)" label="Exam's date" model="$ctrl.date" ></text-input>
-
+    <text-input ng-click="$ctrl.dateTimePicker.open()" label="{{$ctrl.placeholder}}" model="$ctrl.date | amDateFormat:'DD/MM/YYYY'" prevent-default="true"></text-input>
 </div>

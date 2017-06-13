@@ -6,11 +6,17 @@ export default ($timeout) => ({
     templateUrl: "input.text.html",
     scope: {
         label: "@",
-        model: '='
+        model: '=',
+        preventDefault: '='
     },
-    link: () => {
+    link: ($scope) => {
         $timeout(() => {
             Materialize.updateTextFields();
         }, 300); //todo find better solution, it really sucks
+
+        $scope.onKeyPressed = function (event) {
+            if ($scope.preventDefault)
+                event.preventDefault();
+        }
     }
 });

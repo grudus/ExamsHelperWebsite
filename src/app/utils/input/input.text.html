@@ -1,6 +1,6 @@
 <div class='row'>
     <div class='input-field col s12'>
-        <input class='validate' type='text' name='label' id='label' ng-model="model" required/>
+        <input class='validate' type='text' name='label' id='label' ng-model="model" required ng-keypress="onKeyPressed($event)"/>
         <label for='label' ng-bind="label"></label>
     </div>
 </div>

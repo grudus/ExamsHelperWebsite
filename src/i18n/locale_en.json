@@ -40,7 +40,8 @@
     "EMPTY": "You haven't got any exams yet!",
     "NEW": {
       "SUBJECT_PLACEHOLDER": "Choose subject",
-      "INPUT_LABEL": "Additional info"
+      "INPUT_LABEL": "Additional info",
+      "CALENDAR_LABEL": "Exam's date"
     }
   },
   "SUBJECTS": {
