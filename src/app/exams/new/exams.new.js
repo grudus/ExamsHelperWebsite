@@ -12,10 +12,10 @@ class NewExam {
     }
 
     onOk() {
-            this.onSubmit({exam: this.subject});
-            this.onCancel();
-            this.exam = {};
-        }
+        this.onSubmit({exam: this.subject});
+        this.onCancel();
+        this.exam = {};
+    }
 
 }
 

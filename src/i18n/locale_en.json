@@ -41,7 +41,8 @@
     "NEW": {
       "SUBJECT_PLACEHOLDER": "Choose subject",
       "INPUT_LABEL": "Additional info",
-      "CALENDAR_LABEL": "Exam's date"
+      "CALENDAR_LABEL": "Exam's date",
+      "CLOCK_LABEL": "Exam's time"
     }
   },
   "SUBJECTS": {

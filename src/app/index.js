@@ -5,6 +5,7 @@ import "ui-select/dist/select.css";
 import "selectize/dist/css/selectize.css";
 import "material-datetime-picker";
 import "material-datetime-picker/dist/material-datetime-picker.css";
+import "grudus-timepicker/src/styles/index.css"
 
 import angular from "angular";
 import uiRouter from "angular-ui-router";

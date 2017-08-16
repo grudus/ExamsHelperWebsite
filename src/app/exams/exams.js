@@ -1,4 +1,4 @@
-require('./exams.html')
+require('./exams.html');
 
 class Exams {
     /*@ngInject */
@@ -10,10 +10,6 @@ class Exams {
 
     convertToMap(exams) {
         this.examsPerDay = exams;
-    }
-
-    dupa() {
-        console.log('dipa')
     }
 }
 
