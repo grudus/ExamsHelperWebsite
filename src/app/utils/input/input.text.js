@@ -1,4 +1,4 @@
-require('./input.text.html')
+require('./input.text.html');
 
 /*@ngInject*/
 export default ($timeout) => ({

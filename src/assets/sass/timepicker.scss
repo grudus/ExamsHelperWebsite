@@ -1,0 +1,16 @@
+$borderColor: #cccccc;
+
+.g-time-wrapper {
+  z-index: 100001;
+}
+
+.g-clock-wrapper {
+  border-left: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+}
+
+.g-buttons {
+  border-left: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+}

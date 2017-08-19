@@ -14,10 +14,10 @@
             <text-input label="{{'EXAMS.NEW.INPUT_LABEL' | translate}}" model="$ctrl.exam.info"></text-input>
         </div>
         <div class="m-20">
-            <datepicker placeholder="{{'EXAMS.NEW.CALENDAR_LABEL' | translate}}"></datepicker>
+            <datepicker placeholder="{{'EXAMS.NEW.CALENDAR_LABEL' | translate}}" on-submit="$ctrl.setDate(date)"></datepicker>
         </div>
         <div class="m-20">
-            <timepicker placeholder="{{'EXAMS.NEW.CLOCK_LABEL' | translate}}"></timepicker>
+            <timepicker placeholder="{{'EXAMS.NEW.CLOCK_LABEL' | translate}}" on-submit="$ctrl.setTime(time)"></timepicker>
         </div>
 
         <div class="m-b-30 p-b-10">
