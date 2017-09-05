@@ -3,7 +3,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
 
 module.exports = {
-    entry: "./src/app/index.js",
+    entry: ["babel-polyfill", "./src/app/index.js"],
     plugins: [
         new ExtractTextPlugin("styles.css"),
         new webpack.ProvidePlugin({
@@ -16,7 +16,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/, exclude: /(node_modules)/,
-                loaders: ['ng-annotate-loader', {loader: 'babel-loader', options: {presets: ['es2015']}}]
+                loaders: ['ng-annotate-loader', {loader: 'babel-loader', options: {presets: ['es2015', 'es2017']}}]
             },
             {
                 test: /\.html$/,
