@@ -2,10 +2,12 @@ require('./exams.html');
 
 class Exams {
     /*@ngInject */
-    constructor(ExamsService) {
+    constructor(ExamsService, moment) {
         this.ExamsService = ExamsService;
+
         this.ExamsService.getAllAsMap().$promise
-            .then(res => this.convertToMap(res))
+            .then(res => this.convertToMap(res));
+        this.moment = moment;
     }
 
     convertToMap(exams) {
@@ -17,9 +19,11 @@ class Exams {
         const toSave = exam;
         toSave.date.setMinutes(exam.time.minutes);
         toSave.date.setHours(exam.time.hours);
+        toSave.date = this.moment(toSave.date).format("YYYY-MM-DD HH:mm:ss");
         toSave.subjectId = exam.subject.id;
 
-        console.log(toSave)
+        console.log(toSave);
+        this.ExamsService.save({}, toSave, response => console.log(response))
     }
 }
 
