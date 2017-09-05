@@ -4,11 +4,12 @@ class NewExam {
 
     /*@ngInject*/
     constructor(SubjectsService) {
-        SubjectsService.query().$promise.then(res => {
-            this.subjects = res;
-            this.restartExam();
-        });
+        this.SubjectsService = SubjectsService;
+    }
 
+    async $onInit() {
+        this.subjects = await this.SubjectsService.query().$promise;
+        this.restartExam();
     }
 
     onOk() {

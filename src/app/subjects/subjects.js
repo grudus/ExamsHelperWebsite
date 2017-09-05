@@ -6,10 +6,10 @@ class Subjects {
         this.SubjectsService = SubjectsService;
         this.$state = $state;
         this.showModal = false;
+    }
 
-        SubjectsService.query().$promise.then(res => {
-            this.subjects = res;
-        })
+    async $onInit() {
+        this.subjects = await this.SubjectsService.query()
     }
 
     addNewSubject(subject) {
@@ -17,7 +17,6 @@ class Subjects {
             this.subjects.push(subject)
         });
     }
-
 
     details(subject) {
         this.$state.go('app.subjects.details', {label: subject.label, subject: subject, update: this.afterUpdate})

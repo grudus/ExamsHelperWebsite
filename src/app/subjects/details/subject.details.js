@@ -5,28 +5,24 @@ class SubjectDetails {
     constructor(ColorsService, $stateParams, SubjectsService, $state) {
         this.SubjectService = SubjectsService;
         this.$state = $state;
-
-        if (!$stateParams.subject || !$stateParams.subject.id) {
-            SubjectsService.details({label: $stateParams.label}).$promise
-                .then(sub => this.subject = sub, err => {
-                    $state.go('error')
-                })
-        } else this.subject = $stateParams.subject;
+        this.$stateParams = $stateParams;
         this.colors = ColorsService.getColors();
     }
 
-    deleteSubject() {
-        this.SubjectService.delete({}, {id: this.subject.id}, () => {
-            this.$state.go("app.subjects", {deletedLabel: this.subject.label}, {reload: "app.subjects"})
-        })
+    async $onInit() {
+        if (!this.$stateParams.subject || !this.$stateParams.subject.id) {
+            this.subject = await this.SubjectService.details({label: this.$stateParams.label})
+        } else this.subject = this.$stateParams.subject;
     }
 
-    update() {
-        this.SubjectService.update({}, this.subject, () => {
-                this.$state.go("app.subjects", {}, {reload: "app.subjects"})
-            },
-            (err) => window.console.log(err)
-        )
+    async deleteSubject() {
+        await this.SubjectService.delete({}, {id: this.subject.id}).$promise;
+        this.$state.go("app.subjects", {deletedLabel: this.subject.label}, {reload: "app.subjects"})
+    }
+
+    async update() {
+        await this.SubjectService.update({}, this.subject).$promise;
+        this.$state.go("app.subjects", {}, {reload: "app.subjects"})
     }
 
     changeColor(color) {
