@@ -1,9 +1,10 @@
-<div class="row m-t-100">
+<div class="row m-t-100" ng-show="!$ctrl.loading">
     <div class="col s4 offset-s4">
         <div class="card center-align center-block hoverable p-20  bor-rad text">
-            <h5 class="p-b-10" ng-bind="$ctrl.username">Kuba</h5>
-            <h6 ng-bind="$ctrl.email">kuba@kuba.com</h6>
-            <h6 ng-bind="$ctrl.registerDate">12-12-2001</h6>
+            <h5 class="p-b-10" ng-bind="$ctrl.user.username"></h5>
+            <h6 ng-bind="$ctrl.user.email"></h6>
+            <h6 ng-bind="$ctrl.user.registerDate">12-12-2001</h6>
         </div>
     </div>
 </div>
+<cube-loading loading="$ctrl.loading"></cube-loading>

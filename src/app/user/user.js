@@ -4,12 +4,12 @@ class User {
     /*@ngInject*/
     constructor(UserService) {
         this.UserService = UserService;
+        this.loading = true;
+    }
 
-        this.UserService.get({}, (resopnse) => {
-            this.username = resopnse.username;
-            this.email = resopnse.email;
-            this.registerDate = resopnse.registerDate;
-        });
+    async $onInit() {
+        this.user = await this.UserService.get();
+        this.loading = false;
     }
 }
 
