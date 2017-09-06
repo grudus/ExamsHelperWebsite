@@ -2,13 +2,17 @@ require('./exams.html');
 
 class Exams {
     /*@ngInject */
-    constructor(ExamsService, moment) {
+    constructor(ExamsService, moment, $state) {
         this.ExamsService = ExamsService;
         this.moment = moment;
+        this.$state = $state;
+        this.loading = true;
     }
 
     async $onInit() {
-        this.examsPerDay = await this.ExamsService.getAllAsMap();
+        this.examsPerDay = await this.ExamsService.getAllAsMap().$promise;
+        this.examsPerDay = this.examsPerDay.sort((a, b) => b.date.localeCompare(a.date))
+        this.loading = false;
     }
 
 
@@ -19,7 +23,7 @@ class Exams {
         toSave.date = this.moment(toSave.date).format("YYYY-MM-DD HH:mm:ss");
         toSave.subjectId = exam.subject.id;
 
-        this.ExamsService.save({}, toSave, response => console.log(response))
+        this.ExamsService.save({}, toSave, response => this.$state.reload())
     }
 }
 

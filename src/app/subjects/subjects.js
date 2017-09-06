@@ -1,4 +1,4 @@
-require('./subjects.html')
+require('./subjects.html');
 
 class Subjects {
     /*@ngInject */
@@ -6,10 +6,12 @@ class Subjects {
         this.SubjectsService = SubjectsService;
         this.$state = $state;
         this.showModal = false;
+        this.loading = true;
     }
 
     async $onInit() {
-        this.subjects = await this.SubjectsService.query()
+        this.subjects = await this.SubjectsService.query();
+        this.loading = false;
     }
 
     addNewSubject(subject) {

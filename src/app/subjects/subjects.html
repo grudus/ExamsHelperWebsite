@@ -1,6 +1,6 @@
 <div ui-view="">
-    <h3 class="center-align m-t-100 grey-text text-darken-3" ng-show="!$ctrl.subjects" translate="SUBJECTS.EMPTY"></h3>
-    <div ng-show="$ctrl.subjects" class="row m-t-100">
+    <h3 class="center-align m-t-100 grey-text text-darken-3" ng-show="!loading && !$ctrl.subjects.length" translate="SUBJECTS.EMPTY"></h3>
+    <div ng-show="$ctrl.subjects.length" class="row m-t-100">
         <ul class="row">
             <div class="row col offset-s2 s8">
                 <li ng-repeat="subject in $ctrl.subjects" class="col s4 m4 m-b-10">
@@ -22,5 +22,5 @@
 
     <fab on-click="$ctrl.showModal = true"></fab>
     <new-subject ng-show="$ctrl.showModal" on-cancel="$ctrl.showModal = false" on-submit="$ctrl.addNewSubject(subject)"></new-subject>
-
+    <cube-loading loading="$ctrl.loading"></cube-loading>
 </div>

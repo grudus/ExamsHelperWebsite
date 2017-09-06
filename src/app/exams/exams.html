@@ -1,5 +1,5 @@
 <div>
-    <h3 class="center-align m-t-100 grey-text text-darken-3" ng-show="!$ctrl.examsPerDay" translate="EXAMS.EMPTY"></h3>
+    <h3 class="center-align m-t-100 grey-text text-darken-3" ng-show="!loading && !$ctrl.examsPerDay.length" translate="EXAMS.EMPTY"></h3>
 
     <ul class="m-t-100">
         <li ng-repeat="examPerDay in $ctrl.examsPerDay" class="row grey-text text-darken-3">
@@ -26,5 +26,6 @@
     </ul>
 
     <fab on-click="$ctrl.showModal = true"></fab>
+    <cube-loading loading="$ctrl.loading"></cube-loading>
     <new-exam ng-show="$ctrl.showModal" on-cancel="$ctrl.showModal = false" on-submit="$ctrl.addNewExam(exam)"></new-exam>
 </div>

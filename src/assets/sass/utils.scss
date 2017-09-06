@@ -70,3 +70,10 @@
 .b-b {
   border-bottom: 1px solid #e2e2e2;
 }
+
+.center-fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
