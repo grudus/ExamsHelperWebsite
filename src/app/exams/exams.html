@@ -2,6 +2,13 @@
     <h3 class="center-align m-t-100 grey-text text-darken-3"
         ng-show="!($ctrl.loading || $ctrl.examsPerDay.length)" translate="EXAMS.EMPTY"></h3>
 
+    <section class="m-t-100">
+        <div class="center-align p-2 row m-w-300 bor-rad-30 m-auto" style="background-color: rgba(244, 67, 54, 0.1)">
+            <span class="center-align col s6 left-switcher active">FUTURE</span>
+            <span class="center-align col s6 right-switcher">PAST</span>
+        </div>
+    </section>
+
     <ul class="m-t-100">
         <li ng-repeat="examPerDay in $ctrl.examsPerDay" class="row grey-text text-darken-3">
             <section class="p-20 col s4 offset-s4">
@@ -27,5 +34,6 @@
     </ul>
 
     <fab on-click="$ctrl.showModal = true"></fab>
-    <new-exam ng-show="$ctrl.showModal" on-cancel="$ctrl.showModal = false" on-submit="$ctrl.addNewExam(exam)"></new-exam>
+    <new-exam ng-show="$ctrl.showModal" on-cancel="$ctrl.showModal = false"
+              on-submit="$ctrl.addNewExam(exam)"></new-exam>
 </div>
