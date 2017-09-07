@@ -9,12 +9,6 @@ class Exams {
         this.loading = true;
     }
 
-    async $onInit() {
-        this.examsPerDay = await this.ExamsService.getAllAsMap().$promise;
-        this.examsPerDay = this.examsPerDay.sort((a, b) => b.date.localeCompare(a.date))
-        this.loading = false;
-    }
-
 
     addNewExam(exam) {
         const toSave = exam;
