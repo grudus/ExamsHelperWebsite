@@ -2,14 +2,17 @@ require("./exams.past.html")
 
 class PastExams {
     /*@ngInject*/
-    constructor(ExamsService) {
+    constructor(ExamsService, moment) {
         this.ExamsService = ExamsService;
         this.loading = true;
+        this.moment = moment;
     }
-
 }
 
 export default {
     controller: PastExams,
-    templateUrl: "exams.past.html"
+    templateUrl: "exams.past.html",
+    bindings: {
+        examsPerDay: '<'
+    }
 }

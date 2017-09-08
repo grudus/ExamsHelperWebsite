@@ -14,13 +14,14 @@ export default angular.module('ExamsHelper.Exams', [])
     .config(($stateProvider) => {
         $stateProvider.state("app.exams", {
             component: "exams",
-            abstract: true
+            abstract: true,
+            resolve: {
+                examsPerDay: (ExamsService, moment) =>
+                    ExamsService.getAllAsMap({dateFrom: moment().toISOString()}).$promise
+            }
         }).state("app.exams.upcoming", {
             url: "/exams/upcoming",
             component: "upcomingExams",
-            resolve: {
-                examsPerDay: (ExamsService) => ExamsService.getAllAsMap().$promise
-            }
         }).state("app.exams.past", {
             url: "/exams/past",
             component: "pastExams"

@@ -8,7 +8,8 @@ class UpcomingExams {
     }
 
     $onInit() {
-        this.examsPerDay = this.examsPerDay.sort((a, b) => b.date.localeCompare(a.date));
+        this.examsPerDay = this.examsPerDay
+            .sort((a, b) => a.date.localeCompare(b.date));
         this.loading = false;
     }
 }
