@@ -23,5 +23,8 @@ class Exams {
 
 export default {
     controller: Exams,
-    templateUrl: 'exams.html'
+    templateUrl: 'exams.html',
+    bindings: {
+        withoutGradeCount: '<'
+    }
 }

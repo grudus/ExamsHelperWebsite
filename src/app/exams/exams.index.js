@@ -17,7 +17,8 @@ export default angular.module('ExamsHelper.Exams', [])
             abstract: true,
             resolve: {
                 examsPerDay: (ExamsService, moment) =>
-                    ExamsService.getAllAsMap({dateFrom: moment().format()}).$promise
+                    ExamsService.getAllAsMap({dateFrom: moment().format()}).$promise,
+                withoutGradeCount: (ExamsService) => ExamsService.countWithoutGrade().$promise
             }
         }).state("app.exams.upcoming", {
             url: "/exams/upcoming",
