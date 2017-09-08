@@ -6,6 +6,7 @@ import FloatingActionButton from "./fab/fab";
 import Dropdown from "./dropdown/dropdown";
 import DatePicker from "./datepicker/datepicker";
 import TimePicker from "./timepicker/timepicker"
+import truncate from "./truncate"
 
 export default angular.module('ExamsHelper.Utils', [])
     .directive("inputTaken", InputTaken)
@@ -16,4 +17,5 @@ export default angular.module('ExamsHelper.Utils', [])
     .component('dropdown', Dropdown)
     .component('datepicker', DatePicker)
     .component('timepicker', TimePicker)
+    .filter('truncate', truncate)
     .name;

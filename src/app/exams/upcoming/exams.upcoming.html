@@ -14,10 +14,10 @@
                     </div>
                     <section class=" m-l-25">
                         <div>
-                            <p class="p-1-2 bold">{{exam.subject.label}}</p>
+                            <p class="p-1-2 bold">{{exam.subject.label | truncate: 30}}</p>
                         </div>
                         <div>
-                            {{exam.info}}
+                            {{exam.info | truncate: 50}}
                         </div>
                     </section>
                 </div>
