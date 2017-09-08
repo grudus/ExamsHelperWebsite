@@ -4,12 +4,13 @@
         <div class="p-20">
             <h5 class="header center-align" translate="SUBJECTS.NEW.TITLE"></h5>
 
+            <!--TODO 09.09.2017 add 64-len validation-->
             <text-input label="{{'SUBJECTS.NEW.INPUT_LABEL' | translate}}" model="$ctrl.subject.label"></text-input>
-
             <color-choice on-change="$ctrl.changeColor(color)"></color-choice>
 
             <div class="m-b-30 p-b-10">
-                <p class="waves-effect waves-teal btn-flat right bold p-1-2 green-text text-darken-2" ng-class="$ctrl.subject.label ? '' : 'disabled'"
+                <p class="waves-effect waves-teal btn-flat right bold p-1-2 green-text text-darken-2"
+                   ng-class="$ctrl.subject.label ? '' : 'disabled'"
                    ng-click="$ctrl.onOk()" translate="SUBJECTS.NEW.BUTTON.SUBMIT"></p>
 
                 <p class="waves-effect waves-teal btn-flat right bold p-1-2 red-text text-darken-2 p-enabled"

@@ -114,6 +114,10 @@ $nice-red: #f44336;
   line-height: 28px;
   color: white;
   background: #689f38;
+
+  &:hover {
+    cursor: default;
+  }
 }
 
 .bor-rad-30 {
