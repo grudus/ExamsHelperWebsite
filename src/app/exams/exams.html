@@ -6,7 +6,7 @@
             translate="EXAMS.UPCOMING"></div>
             <div class="center-align col s6 right-switcher relative" ui-sref="app.exams.past" ui-sref-active="active">
                 {{'EXAMS.PAST' | translate}}
-                <div class="notificator">{{$ctrl.withoutGradeCount.count}}</div>
+                <div class="notificator showUp" ng-if="$ctrl.withoutGradeCount.count">{{$ctrl.withoutGradeCount.count}}</div>
             </div>
         </div>
     </section>
