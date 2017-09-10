@@ -18,6 +18,7 @@ import ngResource from "angular-resource";
 import ngSanitize from "angular-sanitize";
 import uiSelect from "ui-select";
 import angularMoment from "angular-moment";
+import ngAnimate from "angular-animate";
 
 import Auth from "./auth/auth.index";
 import App from "./panel/app.index";
@@ -41,6 +42,7 @@ angular.module("ExamsHelper", [
     translateLoader,
     ngResource,
     ngSanitize,
+    ngAnimate,
     uiSelect,
     angularMoment,
 

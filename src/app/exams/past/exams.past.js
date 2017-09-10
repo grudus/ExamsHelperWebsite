@@ -1,4 +1,4 @@
-require("./exams.past.html")
+require("./exams.past.html");
 
 class PastExams {
     /*@ngInject*/
@@ -12,7 +12,4 @@ class PastExams {
 export default {
     controller: PastExams,
     templateUrl: "exams.past.html",
-    bindings: {
-        examsPerDay: '<'
-    }
 }
