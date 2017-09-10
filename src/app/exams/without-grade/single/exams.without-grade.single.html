@@ -1,0 +1,16 @@
+<div class="p-20 center-align card pointer" ng-click="$ctrl.toggleShow($event)">
+    <div>{{$ctrl.exam.info}}</div>
+    <div>{{$ctrl.exam.date}}</div>
+</div>
+
+<section ng-style="{'height': $ctrl.show ? '430px' : '0'}" class="row height-animation">
+    <ul>
+        <li ng-repeat="grade in $ctrl.grades" class="col s4">
+            <span class="dupa p-10 card white-text pointer center-align center-block p-1-2"
+                  ng-class="grade.value % 1 === 0 ? 'primary': 'secondary'"
+                  ng-hide="grade.hide">
+                {{grade.label}}
+            </span>
+        </li>
+    </ul>
+</section>

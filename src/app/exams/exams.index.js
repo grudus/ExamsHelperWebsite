@@ -5,12 +5,17 @@ import NewExam from "./new/exams.new";
 import UpcomingExams from "./upcoming/exams.upcoming"
 import PastExams from "./past/exams.past"
 
+import WithoutGrade from "./without-grade/exams.without-grade"
+import SingleWithoutGrade from "./without-grade/single/exams.without-grade.single"
+
 export default angular.module('ExamsHelper.Exams', [])
     .service("ExamsService", ExamsService)
     .component("exams", Exams)
     .component("upcomingExams", UpcomingExams)
     .component("pastExams", PastExams)
     .component("newExam", NewExam)
+    .component("examsWithoutGrade", WithoutGrade)
+    .component("examWithoutGrade", SingleWithoutGrade)
     .config(($stateProvider) => {
         $stateProvider.state("app.exams", {
             component: "exams",

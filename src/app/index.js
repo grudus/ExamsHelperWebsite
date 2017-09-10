@@ -30,6 +30,7 @@ import Error from "./error/error.index";
 import Colors from "./colors/colors.index";
 import Stats from "./stats/stats.index";
 import Animation from "./animation/animation.index";
+import Grades from "./grades/grades.index"
 
 import Config from "./config";
 
@@ -55,6 +56,7 @@ angular.module("ExamsHelper", [
     Colors,
     Stats,
     Animation,
+    Grades,
     Utils
 ]).config(Config)
     .constant('API', 'http://localhost:8080/api')
