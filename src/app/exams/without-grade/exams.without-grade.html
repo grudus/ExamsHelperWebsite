@@ -2,7 +2,7 @@
 <section class="row m-t-30">
     <ul>
         <li ng-repeat="exam in $ctrl.exams" class="col s6">
-            <exam-without-grade exam="exam"></exam-without-grade>
+            <exam-without-grade exam="exam" select-grade="$ctrl.selectGrade(grade, exam)"></exam-without-grade>
         </li>
     </ul>
 </section>

@@ -17,6 +17,7 @@ export default {
     controller: ExamWithoutGrade,
     templateUrl: "exams.without-grade.single.html",
     bindings: {
-        exam: '<'
+        exam: '<',
+        selectGrade: '&'
     }
 }
