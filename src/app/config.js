@@ -4,7 +4,7 @@ export default ($stateProvider, $urlRouterProvider, $httpProvider, $locationProv
     $urlRouterProvider.otherwise('/');
     $translateProvider.useLocalStorage().useLoaderCache(true).forceAsyncReload(true).useSanitizeValueStrategy(null)
         .useStaticFilesLoader({
-            prefix: '/i18n/locale_',
+            prefix: './i18n/locale_',
             suffix: '.json'
         })
         .registerAvailableLanguageKeys(["en"], {
