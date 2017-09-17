@@ -1,29 +1,12 @@
-<div class="row m-t-30">
-    <div class="col s4 offset-s4">
-        <div class="center-block bor-rad" ng-style="{'background': $ctrl.subject.color}">
-            <div class="p-h-50">
-                <h3 class="light center-align white-text text-darken-1">{{$ctrl.subject.label}}</h3>
-            </div>
-        </div>
+<section class="row m-t-30">
 
-       <div text-input class="m-t-30" label="{{'SUBJECTS.NEW.INPUT_LABEL' | translate}}" model="$ctrl.subject.label"></div>
+    <edit-subject subject="$ctrl.subject" on-submit="$ctrl.update()" on-delete="$ctrl.modalShown = true"></edit-subject>
 
-        <color-choice on-change="$ctrl.changeColor(color)" color="$ctrl.subject.color"></color-choice>
+    <exams-without-grade class="col s6 offset-s3 m-t-100" exams="$ctrl.examsWithoutGrade "></exams-without-grade>
 
-        <a class="btn btn-large waves-effect waves-light right" type="submit" name="action"
-                ng-click="$ctrl.update()" > {{'BUTTON.APPLY' | translate}}
-            <i class="material-icons right">send</i>
-        </a>
-        <a class="btn red btn-large waves-effect waves-light right m-r-5" type="submit" name="action" ng-click="$ctrl.modalShown = true">
-            {{'BUTTON.DELETE' | translate}}
-            <i class="material-icons right">delete</i>
-        </a>
-    </div>
 
     <modal-confirmation show="$ctrl.modalShown" message="{{'SUBJECTS.DETAILS.DELETE.MESSAGE' | translate}}"
-                        on-submit="$ctrl.deleteSubject()" title="{{'SUBJECTS.DETAILS.DELETE.TITLE' | translate}}"></modal-confirmation>
+                        on-submit="$ctrl.deleteSubject()"
+                        title="{{'SUBJECTS.DETAILS.DELETE.TITLE' | translate}}"></modal-confirmation>
 
-
-<exams-without-grade class="col s6 offset-s3 m-t-100" exams="$ctrl.examsWithoutGrade "></exams-without-grade>
-
-</div>
+</section>

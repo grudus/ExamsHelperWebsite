@@ -2,11 +2,10 @@ require('./subject.details.html');
 
 class SubjectDetails {
     /*@ngInject*/
-    constructor(ColorsService, SubjectsService, SubjectExamsService, $state, $stateParams) {
+    constructor(SubjectsService, SubjectExamsService, $state, $stateParams) {
         this.SubjectService = SubjectsService;
         this.$state = $state;
         this.$stateParams = $stateParams;
-        this.colors = ColorsService.getColors();
         this.SubjectExamsService = SubjectExamsService;
     }
 
@@ -26,14 +25,6 @@ class SubjectDetails {
     async update() {
         await this.SubjectService.update({}, this.subject).$promise;
         this.$state.go("app.subjects", {}, {reload: "app.subjects"})
-    }
-
-    changeColor(color) {
-        this.subject.color = color;
-    }
-
-    getColor() {
-        return this.subject.color;
     }
 }
 
