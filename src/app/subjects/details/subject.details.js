@@ -2,16 +2,16 @@ require('./subject.details.html');
 
 class SubjectDetails {
     /*@ngInject*/
-    constructor(SubjectsService, SubjectExamsService, $state, $stateParams) {
+    constructor(SubjectsService, ExamsSubjectService, $state, $stateParams) {
         this.SubjectService = SubjectsService;
         this.$state = $state;
         this.$stateParams = $stateParams;
-        this.SubjectExamsService = SubjectExamsService;
+        this.ExamsSubjectService = ExamsSubjectService;
     }
 
     async $onInit() {
         this.subject = await this.SubjectService.details({}, {id: this.$stateParams.id}).$promise;
-        this.examsWithoutGrade = await this.SubjectExamsService.getForSubject({}, {id: this.subject.id});
+        this.examsWithoutGrade = await this.ExamsSubjectService.getForSubject({subjectId: this.subject.id});
     }
 
     async deleteSubject() {
