@@ -10,10 +10,7 @@ class SubjectDetails {
     }
 
     async $onInit() {
-        if (!this.$stateParams.subject || !this.$stateParams.subject.id) {
-            this.subject = await this.SubjectService.details({label: this.$stateParams.label}).$promise
-        } else this.subject = this.$stateParams.subject;
-
+        this.subject = await this.SubjectService.details({}, {id: this.$stateParams.id}).$promise;
         this.examsWithoutGrade = await this.SubjectExamsService.getForSubject({}, {id: this.subject.id});
     }
 

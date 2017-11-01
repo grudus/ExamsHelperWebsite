@@ -18,11 +18,8 @@ export default angular.module('ExamsHelper.Subjects', [])
             component: "subjects"
         })
             .state('app.subjects.details', {
-                url: "/:label",
-                component: "subjectDetails",
-                params: {
-                    subject: null
-                }
+                url: "/:id",
+                component: "subjectDetails"
             })
     })
     .name
