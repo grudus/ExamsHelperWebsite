@@ -19,6 +19,7 @@ import ngSanitize from "angular-sanitize";
 import uiSelect from "ui-select";
 import angularMoment from "angular-moment";
 import ngAnimate from "angular-animate";
+import ChartJsProvider from "angular-chart.js/angular-chart"
 
 import Auth from "./auth/auth.index";
 import App from "./panel/app.index";
@@ -46,6 +47,7 @@ angular.module("ExamsHelper", [
     ngAnimate,
     uiSelect,
     angularMoment,
+    ChartJsProvider,
 
     Auth,
     App,

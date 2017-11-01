@@ -15,13 +15,14 @@ class Subjects {
     }
 
     addNewSubject(subject) {
-        this.SubjectsService.add({}, subject, () => {
+        this.SubjectsService.add({}, subject, (res) => {
+            subject.id = res.id;
             this.subjects.push(subject)
         });
     }
 
     details(subject) {
-        this.$state.go('app.subjects.details', {label: subject.label, subject: subject, update: this.afterUpdate})
+        this.$state.go('app.subjects.details', {id: subject.id, update: this.afterUpdate})
     }
 }
 

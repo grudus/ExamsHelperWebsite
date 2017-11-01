@@ -1,5 +1,6 @@
 {
   "TITLE": "ExamsHelper",
+  "GO_MAIN": "Go to the main page",
   "BUTTON": {
     "APPLY": "Apply",
     "DELETE": "Delete "
@@ -73,6 +74,8 @@
   },
   "ERROR": {
     "UNEXPECTED": "An unexpected error occurs. Please, go to the ",
+    "NOT_FOUND": "The page you requested does not exist",
+    "FORBIDDEN": "You haven't got permission to see this resource.",
     "UNEXPECTED_LINK": "login page"
   }
 }

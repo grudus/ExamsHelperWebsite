@@ -6,8 +6,14 @@
     </edit-subject>
 
     <exams-without-grade class="col s6 offset-s3 m-t-100"
-                         exams="$ctrl.examsWithoutGrade ">
+                         ng-if="$ctrl.examsWithoutGrade.length"
+                         exams="$ctrl.examsWithoutGrade">
     </exams-without-grade>
+
+    <average-stats ng-if="$ctrl.subject.id" class="col s3 offset-s3 m-t-100 card" style="margin-top: 100px"
+        subject-id="$ctrl.subject.id">
+
+    </average-stats>
 
 
     <modal-confirmation show="$ctrl.modalShown"

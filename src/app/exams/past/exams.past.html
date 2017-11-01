@@ -1,2 +1,6 @@
-<h3 class="center-align m-t-100 grey-text text-darken-3">
-    Sorry, this feature is unavailable in your country</h3>
+<div class="row">
+    <exams-without-grade class="col s6 offset-s3 m-t-100"
+                         ng-if="$ctrl.examsWithoutGrade.length"
+                         exams="$ctrl.examsWithoutGrade">
+    </exams-without-grade>
+</div>

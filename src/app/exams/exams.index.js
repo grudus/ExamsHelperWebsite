@@ -8,6 +8,8 @@ import PastExams from "./past/exams.past"
 import WithoutGrade from "./without-grade/exams.without-grade"
 import SingleWithoutGrade from "./without-grade/single/exams.without-grade.single"
 
+import ExamsSubjectService from "./exams.subject.service"
+
 export default angular.module('ExamsHelper.Exams', [])
     .service("ExamsService", ExamsService)
     .component("exams", Exams)
@@ -16,6 +18,7 @@ export default angular.module('ExamsHelper.Exams', [])
     .component("newExam", NewExam)
     .component("examsWithoutGrade", WithoutGrade)
     .component("examWithoutGrade", SingleWithoutGrade)
+    .service("ExamsSubjectService", ExamsSubjectService)
     .config(($stateProvider) => {
         $stateProvider.state("app.exams", {
             component: "exams",
@@ -23,7 +26,8 @@ export default angular.module('ExamsHelper.Exams', [])
             resolve: {
                 examsPerDay: (ExamsService, moment) =>
                     ExamsService.getAllAsMap({dateFrom: moment().format()}).$promise,
-                withoutGradeCount: (ExamsService) => ExamsService.countWithoutGrade().$promise
+                withoutGradeCount: (ExamsService) => ExamsService.countWithoutGrade().$promise,
+                examsWithoutGrade: (ExamsSubjectService) => ExamsSubjectService.getForSubject().$promise
             }
         }).state("app.exams.upcoming", {
             url: "/exams/upcoming",
