@@ -46,6 +46,10 @@
       "INPUT_LABEL": "Additional info",
       "CALENDAR_LABEL": "Exam's date",
       "CLOCK_LABEL": "Exam's time"
+    },
+    "DELETE": {
+      "TITLE": "Delete exam",
+      "MESSAGE": "Do you really want to delete this exam?"
     }
   },
   "SUBJECTS": {

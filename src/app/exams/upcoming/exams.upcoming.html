@@ -7,7 +7,8 @@
         <section class="p-20 col s4 offset-s4">
             <h6 class="m-b-15">{{examPerDay.date}}</h6>
             <ul ng-repeat="exam in examPerDay.exams">
-                <div class="p-20 card valign-wrapper">
+
+                <li class="p-20 card valign-wrapper">
                     <div class="circle size-52 line-52 center-align left-align white-text text-darken-2 p-1-2 thin"
                          ng-style="{'background': exam.subject.color}">
                         {{exam.subject.label[0]}}
@@ -20,8 +21,17 @@
                             {{exam.info | truncate: 50}}
                         </div>
                     </section>
-                </div>
+                    <i class="material-icons absolute right-10 pointer red-on-hover"
+                       ng-click="$ctrl.showDeleteModal(exam.id)">delete</i>
+                </li>
+
             </ul>
         </section>
     </li>
 </ul>
+
+<modal-confirmation show="$ctrl.showModal"
+                    message="{{'EXAMS.DELETE.MESSAGE' | translate}}"
+                    on-submit="$ctrl.deleteExam()"
+                    title="{{'EXAMS.DELETE.TITLE' | translate}}">
+</modal-confirmation>
