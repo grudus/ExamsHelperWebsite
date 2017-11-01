@@ -21,6 +21,20 @@ export default ($stateProvider, $urlRouterProvider, $httpProvider, $locationProv
                     uiSelectStart: (uiSelectConfig) => uiSelectConfig.theme = 'selectize'
                 }
             }
-        )
+        );
 
+    $httpProvider.interceptors.push(($rootScope, $q, $translate, $state) => {
+        return {
+            responseError: (res) => {
+                if (!res.config.ignoreInterceptor) {
+                    if (res.status === 401) $state.go("error");
+                    else if (res.status === 403) $state.go("error.forbidden");
+                    else if (res.status === 404) $state.go("error.notFound");
+                    else if (res.status >= 400) $state.go("error");
+                    return $q.reject(res);
+                }
+            }
+        };
+
+    })
 }
