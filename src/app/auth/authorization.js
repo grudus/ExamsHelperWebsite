@@ -1,6 +1,6 @@
 export default class Authorization {
     /*@ngInject*/
-    constructor(AUTH_HEADER, $window, AuthService, $state, $http, $stateParams, $q, $timeout) {
+    constructor(AUTH_HEADER, $window, AuthService, $state, $http, $q, $timeout) {
         this.header = AUTH_HEADER;
         this.$localStorage = $window.localStorage;
         this.AuthService = AuthService;
@@ -47,10 +47,10 @@ export default class Authorization {
 
     login(user, successCallback, errorCallback) {
         this.AuthService.login({username: user.username, password: user.password}, {}, (response, headers) => {
-            successCallback();
+            successCallback(response);
             this.setAuth(headers()[this.header.toLowerCase()]);
             this.$state.go("app.user");
-        }, (error) => errorCallback())
+        }, (error) => errorCallback(error))
     }
 
     register(user) {

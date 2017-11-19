@@ -26,15 +26,14 @@ export default ($stateProvider, $urlRouterProvider, $httpProvider, $locationProv
     $httpProvider.interceptors.push(($rootScope, $q, $translate, $state) => {
         return {
             responseError: (res) => {
-                if (!res.config.ignoreInterceptor) {
-                    if (res.status === 401) $state.go("error");
-                    else if (res.status === 403) $state.go("error.forbidden");
-                    else if (res.status === 404) $state.go("error.notFound");
-                    else if (res.status >= 400) $state.go("error");
+                if (!res.config.ignoreDefaultErrors) {
+                    if (!res.config.ignore401 && res.status === 401) $state.go("error");
+                    else if (!res.config.ignore403 && res.status === 403) $state.go("error.forbidden");
+                    else if (!res.config.ignore404 && res.status === 404) $state.go("error.notFound");
+                    else if (!res.config.ignore500 && res.status >= 404) $state.go("error");
                     return $q.reject(res);
                 }
             }
         };
-
     })
 }
